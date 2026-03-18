@@ -1,24 +1,61 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, PhoneCall, MapPinned, Mail } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  PhoneCall,
+  MapPinned,
+  Mail,
+  ArrowUpRight,
+} from "lucide-react";
+
+/**
+ * DEV NOTE: DATA STRUCTURES
+ * -------------------------
+ * We store links in arrays so that future updates only require editing
+ * these constants, rather than hunting through JSX tags.
+ */
+
+const JOIN_LINKS = [
+  { name: "Donate Now", href: "/donate" },
+  { name: "Volunteers", href: "/about#volunteers" },
+  { name: "Our Partners", href: "/about#partners" },
+  { name: "Become a Supplier", href: "/contact#supplier" },
+];
+
+const USEFUL_LINKS = [
+  { name: "F.A.Q", href: "/faq" },
+  { name: "News", href: "/news" },
+  { name: "Reports", href: "/reports" },
+  { name: "Terms of Use", href: "/terms" },
+  { name: "Privacy Policy", href: "/privacy" },
+];
+
+const INITIATIVES = [
+  { name: "Youth Empowerment", href: "/initiatives/empowerment" },
+  { name: "Youth Networking", href: "/initiatives/networking" },
+  { name: "Skill Development", href: "/initiatives/skills" },
+  { name: "Community Service", href: "/initiatives/service" },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral text-neutral-content p-10 md:px-20">
+    <footer className="bg-neutral text-neutral-content p-10 md:px-20 border-t border-white/5">
       {/* MAIN CONTENT AREA */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
         {/* COLUMN 1: Charity Info */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-6">
           <Link
             href="/"
-            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            className="inline-block hover:opacity-80 transition-opacity"
           >
             <Image
               src="/logo.png"
               alt="NEVILLE Logo"
-              width={3938}
-              height={2098}
-              className="w-20 h-auto object-contain"
+              width={200}
+              height={100}
+              className="w-24 h-auto object-contain"
+              priority
             />
           </Link>
           <p className="text-sm opacity-80 leading-relaxed max-w-xs">
@@ -27,83 +64,109 @@ export default function Footer() {
             support, skill development, and service.
           </p>
 
-          <div className="text-sm flex flex-col gap-2 mt-2 opacity-90">
-            <div className="flex items-start gap-2">
-              <PhoneCall className="w-4 h-4 text-primary mt-0.5" />
-              <span>
-                <strong className="text-white">Phone:</strong> +880 1XXX-XXXXXX
+          <div className="space-y-3 text-sm">
+            {/* DEV NOTE: Using flex items-center for better icon/text alignment */}
+            <a
+              href="tel:+8801XXXXXXXXX"
+              className="flex items-center gap-3 hover:text-primary transition-colors group"
+            >
+              <PhoneCall className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
+              <span className="opacity-90 underline-offset-4 group-hover:underline">
+                +880 1XXX-XXXXXX
               </span>
-            </div>
+            </a>
 
-            <div className="flex items-start gap-2">
-              <Mail className="w-4 h-4 text-primary mt-0.5" />
-              <span>
-                <strong className="text-white">Email:</strong>{" "}
+            <a
+              href="mailto:org.neville@gmail.com"
+              className="flex items-center gap-3 hover:text-primary transition-colors group"
+            >
+              <Mail className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
+              <span className="opacity-90 underline-offset-4 group-hover:underline">
                 org.neville@gmail.com
               </span>
-            </div>
-            <div className="flex items-start gap-2">
-              <MapPinned className="w-4 h-4 text-primary mt-0.5" />
-              <span>
-                <strong className="text-white">Address:</strong> Dhaka,
-                Bangladesh
-              </span>
+            </a>
+
+            <div className="flex items-start gap-3">
+              <MapPinned className="w-4 h-4 text-primary mt-1" />
+              <span className="opacity-90">Dhaka, Bangladesh</span>
             </div>
           </div>
         </div>
 
-        {/* COLUMN 2: Join Us */}
-        <div className="flex flex-col gap-3">
-          <h6 className="font-bold text-white mb-2">Join Us</h6>
-          <Link href="/donate" className="link link-hover text-sm">
-            Donate Now
-          </Link>
-          <Link href="/about#volunteers" className="link link-hover text-sm">
-            Volunteers
-          </Link>
-          <Link href="/about#partners" className="link link-hover text-sm">
-            Our Partners
-          </Link>
-          <Link href="/contact#supplier" className="link link-hover text-sm">
-            Become a Supplier
-          </Link>
-        </div>
-
-        {/* COLUMN 3: Useful Links */}
-        <div className="flex flex-col gap-3">
-          <h6 className="font-bold text-white mb-2">Useful Links</h6>
-          <Link href="/faq" className="link link-hover text-sm">
-            F.A.Q
-          </Link>
-          <Link href="/news" className="link link-hover text-sm">
-            News
-          </Link>
-          <Link href="/reports" className="link link-hover text-sm">
-            Reports
-          </Link>
-          <Link href="/terms" className="link link-hover text-sm">
-            Terms of Use
-          </Link>
-          <Link href="/privacy" className="link link-hover text-sm">
-            Privacy Policy
-          </Link>
-        </div>
-
-        {/* COLUMN 4: Initiatives (Images) */}
+        {/* COLUMN 2: Join Us (Mapped) */}
         <div className="flex flex-col gap-4">
-          <h6 className="font-bold text-white">Initiatives</h6>
-          <div className="grid grid-cols-3 gap-2 w-48">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
+          <h6 className="font-bold text-white uppercase tracking-wider text-xs">
+            Join Our Mission
+          </h6>
+          <ul className="flex flex-col gap-3">
+            {JOIN_LINKS.map((link) => (
+              <li key={link.name}>
+                <Link
+                  href={link.href}
+                  className="text-sm opacity-80 hover:opacity-100 hover:text-primary flex items-center gap-1 transition-all group"
+                >
+                  {link.name}
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* COLUMN 3: Useful Links (Mapped) */}
+        <div className="flex flex-col gap-4">
+          <h6 className="font-bold text-white uppercase tracking-wider text-xs">
+            Information
+          </h6>
+          <ul className="flex flex-col gap-3">
+            {USEFUL_LINKS.map((link) => (
+              <li key={link.name}>
+                <Link
+                  href={link.href}
+                  className="text-sm opacity-80 hover:opacity-100 hover:text-primary transition-all"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* COLUMN 4: Key Initiatives & Gallery */}
+        <div className="flex flex-col gap-6">
+          <div>
+            <h6 className="font-bold text-white uppercase tracking-wider text-xs mb-4">
+              Our Focus
+            </h6>
+            <ul className="flex flex-col gap-3">
+              {INITIATIVES.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-sm opacity-80 hover:opacity-100 hover:text-primary transition-all font-medium"
+                  >
+                    # {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* MINI GALLERY: Finishing Touch */}
+          {/* DEV NOTE: For the static version, these images serve as visual anchors. 
+              In the future, these can be pulled from an Instagram Feed API. */}
+          <div className="grid grid-cols-3 gap-2 w-full max-w-[200px]">
+            {[1, 2, 3].map((i) => (
               <div
                 key={i}
-                className="w-14 h-14 bg-white/10 rounded-md overflow-hidden relative group"
+                className="aspect-square bg-white/5 rounded-md overflow-hidden relative group border border-white/10"
               >
                 <Image
                   src={`/initiative-${i}.jpg`}
                   fill
-                  sizes="(max-width: 768px) 56px, 56px"
-                  className="object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer"
-                  alt={`Initiative ${i}`}
+                  sizes="64px"
+                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
+                  alt={`Initiative display ${i}`}
                 />
               </div>
             ))}
@@ -112,14 +175,15 @@ export default function Footer() {
       </div>
 
       {/* BOTTOM SECTION: Socials & Copyright */}
-      <div className="border-t border-neutral-content/20 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-70">
-        <div className="flex gap-4">
+      <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="flex gap-5">
+          {/* DEV NOTE: Standardized external links with security attributes */}
           <a
             href="https://www.facebook.com/profile.php?id=61584161175379"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visit our Facebook page"
-            className="hover:text-primary hover:scale-110 transition-all duration-300"
+            aria-label="Facebook"
+            className="p-2 bg-white/5 rounded-full hover:bg-primary hover:text-white transition-all duration-300"
           >
             <Facebook className="w-5 h-5" />
           </a>
@@ -127,17 +191,21 @@ export default function Footer() {
             href="https://www.instagram.com/org.neville/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visit our Instagram page"
-            className="hover:text-primary hover:scale-110 transition-all duration-300"
+            aria-label="Instagram"
+            className="p-2 bg-white/5 rounded-full hover:bg-primary hover:text-white transition-all duration-300"
           >
             <Instagram className="w-5 h-5" />
           </a>
         </div>
 
-        <p>
-          © {new Date().getFullYear()} NEVILLE. Empowering youth, serving
-          communities.
-        </p>
+        <div className="text-center md:text-right">
+          <p className="text-xs opacity-60">
+            © {new Date().getFullYear()} NEVILLE. All rights reserved.
+          </p>
+          <p className="text-[10px] mt-1 opacity-40 uppercase tracking-tighter">
+            Empowering youth • Serving communities • Dhaka, Bangladesh
+          </p>
+        </div>
       </div>
     </footer>
   );
