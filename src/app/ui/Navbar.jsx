@@ -59,11 +59,11 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href="/causes"
+                href="/initiatives"
                 onClick={handleClick}
                 className="hover:bg-white/10 active:!bg-white/20 focus-visible:!bg-white/20 text-white"
               >
-                Causes
+                Initiatives
               </Link>
             </li>
             <li>
@@ -130,11 +130,11 @@ export default function Navbar() {
           </li>
           <li>
             <Link
-              href="/causes"
+              href="/initiatives"
               onClick={handleClick}
               className="hover:bg-white/10 focus:!bg-transparent focus:!text-white rounded-md"
             >
-              Causes
+              Initiatives
             </Link>
           </li>
           <li>

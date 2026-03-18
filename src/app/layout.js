@@ -1,5 +1,6 @@
 import "./globals.css";
 import Navbar from "./ui/Navbar";
+import Footer from "./ui/Footer";
 // 1. IMPORT THE FONT FROM NEXT.JS
 import { Inter } from "next/font/google";
 
@@ -24,6 +25,8 @@ export default function RootLayout({ children }) {
         <Navbar />
 
         <main className="grow">{children}</main>
+
+        <Footer />
       </body>
     </html>
   );
