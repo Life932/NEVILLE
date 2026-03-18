@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, PhoneCall, MapPinned } from "lucide-react";
+import { Facebook, Instagram, PhoneCall, MapPinned, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -18,7 +18,7 @@ export default function Footer() {
               alt="NEVILLE Logo"
               width={3938}
               height={2098}
-              className="w-24 h-auto object-contain"
+              className="w-20 h-auto object-contain"
             />
           </Link>
           <p className="text-sm opacity-80 leading-relaxed max-w-xs">
@@ -27,12 +27,19 @@ export default function Footer() {
             support, skill development, and service.
           </p>
 
-          {/* THE FIX: Used a flex column so the icons and text align perfectly */}
           <div className="text-sm flex flex-col gap-2 mt-2 opacity-90">
             <div className="flex items-start gap-2">
               <PhoneCall className="w-4 h-4 text-primary mt-0.5" />
               <span>
                 <strong className="text-white">Phone:</strong> +880 1XXX-XXXXXX
+              </span>
+            </div>
+
+            <div className="flex items-start gap-2">
+              <Mail className="w-4 h-4 text-primary mt-0.5" />
+              <span>
+                <strong className="text-white">Email:</strong>{" "}
+                org.neville@gmail.com
               </span>
             </div>
             <div className="flex items-start gap-2">
@@ -51,12 +58,6 @@ export default function Footer() {
           <Link href="/donate" className="link link-hover text-sm">
             Donate Now
           </Link>
-
-          {/* 
-            HASH ROUTING: Notice the "#volunteers" at the end of the URL.
-            This tells Next.js to go to the About page and automatically scroll 
-            down to the element with id="volunteers". 
-          */}
           <Link href="/about#volunteers" className="link link-hover text-sm">
             Volunteers
           </Link>
@@ -97,11 +98,6 @@ export default function Footer() {
                 key={i}
                 className="w-14 h-14 bg-white/10 rounded-md overflow-hidden relative group"
               >
-                {/* 
-                  STATIC IMAGES: Just save 6 square images in your `public` folder 
-                  named exactly `initiative-1.jpg`, `initiative-2.jpg`, etc.
-                  Next.js will automatically find them!
-                */}
                 <Image
                   src={`/initiative-${i}.jpg`}
                   fill
@@ -122,6 +118,7 @@ export default function Footer() {
             href="https://www.facebook.com/profile.php?id=61584161175379"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit our Facebook page"
             className="hover:text-primary hover:scale-110 transition-all duration-300"
           >
             <Facebook className="w-5 h-5" />
@@ -130,13 +127,13 @@ export default function Footer() {
             href="https://www.instagram.com/org.neville/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit our Instagram page"
             className="hover:text-primary hover:scale-110 transition-all duration-300"
           >
             <Instagram className="w-5 h-5" />
           </a>
         </div>
 
-        {/* DEV NOTE: Using new Date().getFullYear() ensures the year updates automatically! */}
         <p>
           © {new Date().getFullYear()} NEVILLE. Empowering youth, serving
           communities.
