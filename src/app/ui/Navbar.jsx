@@ -60,7 +60,7 @@ export default function Navbar() {
           <div
             tabIndex={0}
             role="button"
-            className="btn btn-ghost lg:hidden focus:!bg-transparent active:!bg-transparent hover:!bg-transparent"
+            className="btn btn-ghost lg:hidden focus:bg-transparent! active:bg-transparent! hover:bg-transparent!"
             aria-label="Open Mobile Navigation"
           >
             <Menu className="h-6 w-6" />
@@ -79,7 +79,7 @@ export default function Navbar() {
                     onClick={handleLinkClick}
                     className={`
                       ${isActive ? "bg-white/20 text-white" : "text-white"}
-                      hover:bg-white/10 active:!bg-white/20 focus-visible:!bg-white/20
+                      hover:bg-white/10 active:bg-white/20! focus-visible:bg-white/20!
                     `}
                   >
                     {link.name}
@@ -130,7 +130,7 @@ export default function Navbar() {
                   onClick={handleLinkClick}
                   className={`
                     ${isActive ? "bg-white/15 text-white underline decoration-accent decoration-2 underline-offset-8" : ""}
-                    hover:bg-white/10 focus:!bg-transparent focus:!text-white rounded-md transition-all duration-300
+                    hover:bg-white/10 focus:bg-transparent! focus:text-white! rounded-md transition-all duration-300
                   `}
                 >
                   {link.name}

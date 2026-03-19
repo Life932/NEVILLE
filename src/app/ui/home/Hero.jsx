@@ -18,7 +18,7 @@ import { Award, Shield, Globe, HeartHandshake } from "lucide-react";
      bgImage 
    }) { ... }
    
-   This allows you to reuse this EXACT layout for the Home page, the "About Us" 
+   This allows us to reuse this EXACT layout for the Home page, the "About Us" 
    page, or even specific "Course Category" pages just by passing different data!
 ============================================================================ */
 
@@ -50,8 +50,8 @@ export default function Hero() {
       {/* GRADIENT OVERLAYS                         */}
       {/* ========================================= */}
       {/* 
-        DEV NOTE (Design System): If you eventually want dark mode support, 
-        you can swap `bg-black/60` to a dynamic theme variable like `bg-base-300/80`.
+        DEV NOTE (Design System): If we eventually want dark mode support, 
+        we can swap `bg-black/60` to a dynamic theme variable like `bg-base-300/80`.
       */}
       <div className="absolute inset-0 bg-black/60 md:hidden"></div>
       <div className="absolute inset-0 hidden md:block bg-linear-to-r from-black/95 via-black/60 to-transparent"></div>
@@ -65,7 +65,7 @@ export default function Hero() {
           {/* 
             DEV NOTE (i18n & SEO): 
             1. If NEVILLE supports Bengali later, ensure the font handles complex ligatures well (like Noto Sans Bengali).
-            2. The `<h1>` tag is critical for SEO. Keep keywords like "Youth", "Education", "Dhaka" in here dynamically.
+            2. The `<h1>` tag is critical for SEO. Keep keywords like "Youth", "Education", "Dhaka" in here dynamically. This part is especially important for Google rankings and discoverability in Bangladesh!
           */}
           <h1 className="mb-2 md:mb-6 text-[2.5rem] leading-[1.05] sm:text-5xl md:text-7xl lg:text-[80px] font-extrabold tracking-tight text-white drop-shadow-2xl">
             Word Word, <br className="sm:block" />{" "}

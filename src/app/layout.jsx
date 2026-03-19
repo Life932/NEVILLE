@@ -1,10 +1,10 @@
 import "./globals.css";
 import Navbar from "./ui/Navbar";
 import Footer from "./ui/Footer";
-// 1. IMPORT THE FONT FROM NEXT.JS
+// Inter Font for Charity Organization Website
 import { Inter } from "next/font/google";
 
-// 2. CONFIGURE THE FONT
+// Font Configuration for Inter Font
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -18,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="neville">
-      {/* 3. APPLY THE FONT TO THE BODY */}
+      {/* 3. Applying the Font */}
       <body
         className={`${inter.className} antialiased flex flex-col min-h-screen`}
       >

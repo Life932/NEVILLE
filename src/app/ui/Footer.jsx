@@ -155,7 +155,7 @@ export default function Footer() {
           {/* MINI GALLERY: Finishing Touch */}
           {/* DEV NOTE: For the static version, these images serve as visual anchors. 
               In the future, these can be pulled from an Instagram Feed API. */}
-          <div className="grid grid-cols-3 gap-2 w-full max-w-[200px]">
+          <div className="grid grid-cols-3 gap-2 w-full max-w-50">
             {[1, 2, 3].map((i) => (
               <div
                 key={i}
