@@ -72,7 +72,7 @@ export default function InfoSection() {
               FIX: 'whitespace-nowrap' and 'min-w-max' prevent the text from breaking 
               into two lines on most screen sizes. 
             */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-16 mt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-16 mt-2 md:whitespace-nowrap min-w-max">
               {STEPS.map((step) => (
                 <div key={step.id} className="flex items-center gap-4 group">
                   <div className="shrink-0 w-11 h-11 rounded-full bg-primary flex items-center justify-center text-white font-bold shadow-lg shadow-primary/20 group-hover:bg-neutral transition-colors duration-300">
