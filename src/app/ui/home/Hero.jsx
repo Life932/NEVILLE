@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     // DEV NOTE (Layout): Using `items-start md:items-center` is the perfect responsive fix.
     // It prevents mobile text from getting pushed below the fold.
-    <div className="hero min-h-[calc(78svh-70px)] md:min-h-[calc(100vh-70px)] relative overflow-hidden flex items-center justify-start pt-6 md:pt-0">
+    <div className="hero min-h-[calc(78svh-70px)] md:min-h-[calc(100vh-70px)] relative overflow-hidden flex items-start md:items-center justify-start pt-6 md:pt-0">
       {/* ========================================= */}
       {/* BACKGROUND IMAGE SETTINGS                 */}
       {/* ========================================= */}
