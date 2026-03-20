@@ -1,6 +1,6 @@
 import Hero from "./ui/home/Hero";
 import Navbar from "./ui/Navbar";
-import InfoBLock from "./ui/home/InfoBlock";
+import InfoSection from "./ui/home/InfoSection";
 import ImpactGrid from "./ui/home/ImpactGrid";
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
     <div className="w-full">
       {/* Hero Section at the very top */}
       <Hero />
-      <InfoBLock />
+      <InfoSection />
       <ImpactGrid />
 
       {/* 
