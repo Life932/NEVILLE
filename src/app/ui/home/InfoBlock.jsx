@@ -79,7 +79,7 @@ export default function InfoSection() {
                     {step.id}
                   </div>
 
-                  <span className="text-sm md:text-base font-bold text-neutral/80 whitespace-nowrap">
+                  <span className="text-sm md:text-base font-bold text-neutral/80">
                     {step.text}
                   </span>
                 </div>
@@ -87,7 +87,7 @@ export default function InfoSection() {
             </div>
 
             {/* CALL TO ACTION */}
-            <div className="pt-6">
+            <div className="pt-6 mx-auto md:mx-0">
               <Link
                 href="/about"
                 className="btn btn-primary rounded-full px-10 shadow-xl hover:shadow-primary/30 transition-all hover:-translate-y-1"
