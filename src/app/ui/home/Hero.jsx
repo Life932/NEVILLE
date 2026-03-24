@@ -124,7 +124,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* PARTNER/SPONSOR LOGOS */}
+          {/* PARTNER/SPONSOR LOGOS! */}
           {/* 
             DEV NOTE (Accessibility & UX): 
             1. Changed `div` to `Link` elements because they act as buttons/links. This fixes keyboard tab-targeting.
