@@ -1,0 +1,33 @@
+import "./globals.css";
+import Navbar from "./ui/Navbar";
+import Footer from "./ui/Footer";
+// Inter Font for Charity Organization Website
+import { Inter } from "next/font/google";
+
+// Font Configuration for Inter Font
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export const metadata = {
+  title: "Our Charity Organization",
+  description: "Making the world a better place.",
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" data-theme="neville">
+      {/* 3. Applying the Font */}
+      <body
+        className={`${inter.className} antialiased flex flex-col min-h-screen`}
+      >
+        <Navbar />
+
+        <main className="grow">{children}</main>
+
+        <Footer />
+      </body>
+    </html>
+  );
+}
