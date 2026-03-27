@@ -199,7 +199,7 @@ export default function Footer() {
         </div>
 
         <div className="text-center md:text-right">
-          <p className="text-xs opacity-60">
+          <p className="text-xs opacity-70">
             © {new Date().getFullYear()} NEVILLE. All rights reserved.
           </p>
           <p className="text-[10px] mt-1 opacity-70 uppercase tracking-tighter">
