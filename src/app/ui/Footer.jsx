@@ -202,7 +202,7 @@ export default function Footer() {
           <p className="text-xs opacity-60">
             © {new Date().getFullYear()} NEVILLE. All rights reserved.
           </p>
-          <p className="text-[10px] mt-1 opacity-40 uppercase tracking-tighter">
+          <p className="text-[10px] mt-1 opacity-70 uppercase tracking-tighter">
             Empowering youth • Serving communities • Dhaka, Bangladesh
           </p>
         </div>
