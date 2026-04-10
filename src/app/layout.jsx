@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Our Charity Organization",
+  title: "Neville Youth Initiative",
   description: "Making the world a better place.",
 };
 
