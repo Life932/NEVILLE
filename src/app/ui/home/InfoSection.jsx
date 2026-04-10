@@ -13,10 +13,10 @@ import Link from "next/link";
       with completely different text!
 ============================================================================ */
 const STEPS = [
-  { id: 1, text: "Choose your cause" },
-  { id: 2, text: "Register on our website" },
-  { id: 3, text: "Donate as you like" },
-  { id: 4, text: "Stay tuned about cause" },
+  { id: 1, text: "Identify your passion" },
+  { id: 2, text: "Connect with mentors" },
+  { id: 3, text: "Develop critical skills" },
+  { id: 4, text: "Lead community action" },
 ];
 
 export default function InfoSection() {
@@ -66,18 +66,18 @@ export default function InfoSection() {
                 - 'tracking-tight' pulls the letters slightly closer for a premium look.
               */}
               <h2 className="text-3xl md:text-5xl font-extrabold text-neutral leading-[1.15] tracking-tight">
-                Transforming Good <br className="hidden md:block" />
-                Intentions into{" "}
+                Transforming Youth <br className="hidden md:block" />
+                Potential into{" "}
                 {/* DEV NOTE: The underline-offset-8 creates a modern marker-highlight effect */}
                 <span className="text-primary underline decoration-primary/20 underline-offset-8">
-                  Lorem, ipsum.
+                  Sustainable Action.
                 </span>
               </h2>
 
               <p className="text-base md:text-lg text-neutral/70 leading-relaxed max-w-xl mx-auto md:mx-0">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo
-                nostrum est nisi molestiae pariatur commodi eum corrupti iste
-                iusto quia.
+                We don't just talk about the future; we build it. NEVILLE
+                connects driven young minds in Dhaka with the mentorship, tools,
+                and research needed to execute real-world community projects.
               </p>
             </div>
 
