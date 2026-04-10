@@ -10,7 +10,7 @@ import TeamSection from "../ui/about/TeamSection.jsx";
 export const metadata = {
   title: "About Us | NEVILLE - A Youth Led Initiative",
   description:
-    "Meet the Founders and Department Leaders driving NEVILLE's mission in Dhaka.",
+    "Meet the Founders and Dedicated Members driving NEVILLE's mission in Bangladesh.",
 };
 
 export default function AboutPage() {
