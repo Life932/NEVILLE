@@ -129,7 +129,9 @@ export default function ContactPage() {
                 the future.
               </p>
               <Link
-                href="/about#volunteers"
+                href="https://forms.gle/j11RnDdtBDZ8PyZq5"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-neutral transition-colors uppercase tracking-wider"
               >
                 <Sparkles className="w-4 h-4" />
