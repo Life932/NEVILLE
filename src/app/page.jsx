@@ -11,7 +11,7 @@ export default function Home() {
       <Hero />
       <InfoSection />
       <ImpactGrid />
-      <InitiativesGrid />
+      {/* <InitiativesGrid /> */}
 
       {/* 
         Later, we will add more sections here! Like:
