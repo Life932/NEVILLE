@@ -151,7 +151,7 @@ export default function Navbar() {
            for links leading away from your site for security and performance.
         */}
         <a
-          href="https://your-donate-link.com"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeX0mLA_rme9yY6-YeERKpTCVAvHdHHP7S1F6ieA6yg5CBZtg/viewform"
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-primary btn-md lg:w-40 text-lg rounded-full text-white shadow-md flex items-center gap-2 border-none transition-transform hover:scale-105"
