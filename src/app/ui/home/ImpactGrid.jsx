@@ -13,29 +13,29 @@ import { BookOpen, Droplets, HeartPulse, Users } from "lucide-react";
 
 const IMPACT_AREAS = [
   {
-    id: "education",
-    title: "Education",
-    desc: "Fermentum nisl accumsan nisi sapien in vitae.",
+    id: "skill-development",
+    title: "Skill Development",
+    desc: "Equipping Dhaka's youth with future-ready skills and peer-to-peer education.",
     icon: BookOpen,
   },
   {
-    id: "clean-water",
-    title: "Clean Water",
-    desc: "Ultricies lacus turpis proin tempor faucibus.",
+    id: "sustainable-action",
+    title: "Sustainable Action",
+    desc: "Creating a ripple effect of change through targeted, youth-led community projects.",
     icon: Droplets,
   },
   {
-    id: "health-care",
-    title: "Health Care",
+    id: "youth-wellbeing",
+    title: "Youth Well-being",
     // DEV NOTE: Swapped 'Stethoscope' for 'HeartPulse' to perfectly match the
     // Figma "Cross/Heart" icon aesthetic.
-    desc: "Adipiscing in vitae necposue eget fringilla a morbi.",
+    desc: "Advocating for mental health awareness and holistic support networks for students.",
     icon: HeartPulse,
   },
   {
-    id: "local-communities",
-    title: "Local Communities",
-    desc: "Nunc tristique quis leo duis gravida volutpat vitae.",
+    id: "leadership",
+    title: "Youth Leadership",
+    desc: "Empowering a new generation to build systemic, lasting support in their neighborhoods.",
     icon: Users,
   },
 ];
