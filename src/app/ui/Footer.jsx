@@ -67,12 +67,12 @@ export default function Footer() {
           <div className="space-y-3 text-sm">
             {/* DEV NOTE: Using flex items-center for better icon/text alignment */}
             <a
-              href="tel:+8801XXXXXXXXX"
+              href="tel:+8801764078003"
               className="flex items-center gap-3 hover:text-primary transition-colors group"
             >
               <PhoneCall className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
               <span className="opacity-90 underline-offset-4 group-hover:underline">
-                +880 1XXX-XXXXXX
+                +8801764078003
               </span>
             </a>
 
@@ -94,7 +94,7 @@ export default function Footer() {
         </div>
 
         {/* COLUMN 2: Join Us (Mapped) */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 invisible">
           <h6 className="font-bold text-white uppercase tracking-wider text-xs">
             Join Our Mission
           </h6>
@@ -114,7 +114,7 @@ export default function Footer() {
         </div>
 
         {/* COLUMN 3: Useful Links (Mapped) */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 invisible">
           <h6 className="font-bold text-white uppercase tracking-wider text-xs">
             Information
           </h6>
@@ -199,10 +199,10 @@ export default function Footer() {
         </div>
 
         <div className="text-center md:text-right">
-          <p className="text-xs opacity-60">
+          <p className="text-xs opacity-70">
             © {new Date().getFullYear()} NEVILLE. All rights reserved.
           </p>
-          <p className="text-[10px] mt-1 opacity-40 uppercase tracking-tighter">
+          <p className="text-[10px] mt-1 opacity-70 uppercase tracking-tighter">
             Empowering youth • Serving communities • Dhaka, Bangladesh
           </p>
         </div>

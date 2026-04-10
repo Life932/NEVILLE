@@ -68,13 +68,15 @@ export default function Hero() {
             2. The `<h1>` tag is critical for SEO. Keep keywords like "Youth", "Education", "Dhaka" in here dynamically. This part is especially important for Google rankings and discoverability in Bangladesh!
           */}
           <h1 className="mb-2 md:mb-6 text-[2.5rem] leading-[1.05] sm:text-5xl md:text-7xl lg:text-[80px] font-extrabold tracking-tight text-white drop-shadow-2xl">
-            Word Word, <br className="sm:block" />{" "}
-            <span className="text-accent">Word</span> Words
+            Empowering Youth, <br className="sm:block" />{" "}
+            <span className="text-accent">Building</span> Leaders
           </h1>
 
           {/* SUB-HEADLINE */}
           <p className="mb-5 md:mb-7 text-sm md:text-base lg:text-xl opacity-90 leading-snug md:leading-relaxed max-w-xl font-medium drop-shadow-lg text-gray-100">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            NEVILLE is a youth-led ecosystem in Dhaka. We replace traditional
+            charity with systemic support, data-driven research, and
+            peer-to-peer mentorship.
           </p>
 
           {/* CALL TO ACTION (CTA) BUTTONS */}
@@ -85,16 +87,18 @@ export default function Hero() {
           */}
           <div className="flex flex-wrap gap-3 md:gap-4 mb-6 md:mb-7">
             <Link
-              href="/join"
+              href="https://forms.gle/j11RnDdtBDZ8PyZq5"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-accent text-accent-content rounded-full px-8 border-none shadow-lg hover:scale-105 transition-transform"
             >
-              Get Started
+              Join the Movement
             </Link>
             <Link
-              href="/courses"
+              href="/about"
               className="btn btn-outline text-white hover:bg-white hover:text-black rounded-full px-8 shadow-lg"
             >
-              Learn More
+              See Our Impact
             </Link>
           </div>
 
@@ -107,19 +111,19 @@ export default function Hero() {
           <div className="flex flex-row flex-wrap gap-x-6 gap-y-2 md:gap-16 mb-5 md:mb-12 border-t border-white/20 pt-4 md:pt-8 w-full">
             <div className="flex items-baseline gap-1.5 md:gap-3">
               <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-accent tracking-tight drop-shadow-xl">
-                ৳ 28 220
+                ৳ 28K+
               </span>
               <span className="text-[10px] sm:text-xs md:text-base opacity-100 font-bold uppercase tracking-widest text-white drop-shadow-md">
-                Stat One
+                Community Funds
               </span>
             </div>
 
             <div className="flex items-baseline gap-1.5 md:gap-3">
               <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-accent tracking-tight drop-shadow-xl">
-                105
+                20+
               </span>
               <span className="text-[10px] sm:text-xs md:text-base opacity-100 font-bold uppercase tracking-widest text-white drop-shadow-md">
-                Stat Two
+                Youth Reached
               </span>
             </div>
           </div>
@@ -134,45 +138,45 @@ export default function Hero() {
           <div className="flex flex-wrap items-center gap-x-4 gap-y-3 md:gap-10 opacity-80 text-white">
             <Link
               href="#"
-              aria-label="Partner 1"
+              aria-label="Partner: MUBC"
               className="flex items-center gap-1.5 md:gap-2 hover:opacity-100 hover:text-accent transition-all"
             >
               <Shield className="w-4 h-4 md:w-6 md:h-6" />
               <span className="text-xs md:text-lg font-bold tracking-tighter drop-shadow-md">
-                logoipsum
+                MUBC
               </span>
             </Link>
 
             <Link
               href="#"
-              aria-label="Partner 2"
+              aria-label="Partner: DRMC"
               className="flex items-center gap-1.5 md:gap-2 hover:opacity-100 hover:text-accent transition-all"
             >
               <Award className="w-4 h-4 md:w-6 md:h-6" />
               <span className="text-xs md:text-lg font-bold tracking-tighter drop-shadow-md">
-                HYPER BEST
+                DRMC
               </span>
             </Link>
 
             <Link
               href="#"
-              aria-label="Partner 3"
+              aria-label="Partner: NDC"
               className="flex items-center gap-1.5 md:gap-2 hover:opacity-100 hover:text-accent transition-all"
             >
               <Globe className="w-4 h-4 md:w-6 md:h-6" />
               <span className="text-xs md:text-lg font-bold tracking-tighter drop-shadow-md">
-                logoipsum
+                NDC
               </span>
             </Link>
 
             <Link
               href="#"
-              aria-label="Partner 4"
+              aria-label="Partner: Global Innovators"
               className="flex items-center gap-1.5 md:gap-2 hover:opacity-100 hover:text-accent transition-all"
             >
               <HeartHandshake className="w-4 h-4 md:w-6 md:h-6" />
               <span className="text-xs md:text-lg font-bold tracking-tighter drop-shadow-md">
-                logoipsum
+                Global Innovators
               </span>
             </Link>
           </div>
