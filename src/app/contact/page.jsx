@@ -88,10 +88,10 @@ export default function ContactPage() {
                 org.neville@gmail.com
               </a>
               <a
-                href="tel:+8801XXXXXXXXX"
+                href="tel: +8801764078003"
                 className="text-base font-bold text-neutral/70 hover:text-primary transition-colors"
               >
-                +880 1XXX-XXXXXX
+                +8801764078003
               </a>
             </div>
 
