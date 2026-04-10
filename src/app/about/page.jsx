@@ -8,7 +8,7 @@ import TeamSection from "../ui/about/TeamSection.jsx";
    generates a beautiful preview card!
 ============================================================================ */
 export const metadata = {
-  title: "About Us | NEVILLE - The Youth Team",
+  title: "About Us | NEVILLE - A Youth Led Initiative",
   description:
     "Meet the Founders and Department Leaders driving NEVILLE's mission in Dhaka.",
 };
