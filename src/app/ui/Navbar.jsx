@@ -14,8 +14,8 @@ import { HandHeart, Menu } from "lucide-react";
  */
 const NAV_LINKS = [
   { name: "Home", href: "/" },
-  { name: "Initiatives", href: "/initiatives" },
-  { name: "Donation Info", href: "/donation-info" },
+  // { name: "Initiatives", href: "/initiatives" },
+  // { name: "Donation Info", href: "/donation-info" },
   { name: "About Us", href: "/about" },
   { name: "Contact Us", href: "/contact" },
 ];
