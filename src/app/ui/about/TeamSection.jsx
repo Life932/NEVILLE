@@ -300,7 +300,7 @@ export default function TeamSection() {
                   <span className="opacity-80">{founder.title}</span>
                 </div>
 
-                <p className="text-sm text-neutral/70 leading-relaxed font-medium italic flex-grow">
+                <p className="text-sm text-neutral/70 leading-relaxed font-medium italic grow">
                   &quot;{founder.quote}&quot;
                 </p>
 
