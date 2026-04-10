@@ -67,12 +67,12 @@ export default function Footer() {
           <div className="space-y-3 text-sm">
             {/* DEV NOTE: Using flex items-center for better icon/text alignment */}
             <a
-              href="tel:+8801XXXXXXXXX"
+              href="tel:+8801764078003"
               className="flex items-center gap-3 hover:text-primary transition-colors group"
             >
               <PhoneCall className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
               <span className="opacity-90 underline-offset-4 group-hover:underline">
-                +880 1XXX-XXXXXX
+                +8801764078003
               </span>
             </a>
 
