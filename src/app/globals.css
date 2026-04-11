@@ -6,26 +6,38 @@
   default: true;
   prefersdark: true;
   color-scheme: "dark";
+
+  /* Backgrounds & Text (Maintained for contrast) */
   --color-base-100: oklch(99% 0.01 255);
   --color-base-200: oklch(96% 0.02 255);
   --color-base-300: oklch(92% 0.03 255);
   --color-base-content: oklch(25% 0.04 255);
-  --color-primary: oklch(55% 0.18 255);
-  --color-primary-content: oklch(100% 0 0);
-  --color-secondary: oklch(75% 0.12 230);
-  --color-secondary-content: oklch(25% 0.04 255);
-  --color-accent: oklch(62% 0.214 259.815);
-  --color-accent-content: oklch(97% 0.014 254.604);
   --color-neutral: oklch(20% 0.04 255);
   --color-neutral-content: oklch(100% 0 0);
-  --color-info: oklch(62% 0.214 259.815);
-  --color-info-content: oklch(97% 0.014 254.604);
-  --color-success: oklch(70% 0.14 182.503);
-  --color-success-content: oklch(98% 0.014 180.72);
+
+  /* Celestial Sea Palette Mapped to Semantic Slots */
+  --color-primary: #809bce;
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #eac4d5;
+  --color-secondary-content: oklch(25% 0.04 255);
+
+  --color-accent: #b8e0d4;
+  --color-accent-content: oklch(25% 0.04 255);
+
+  --color-info: #95b8d1;
+  --color-info-content: oklch(25% 0.04 255);
+
+  --color-success: #d6eadf;
+  --color-success-content: oklch(25% 0.04 255);
+
+  /* Status Colors */
   --color-warning: oklch(79% 0.184 86.047);
-  --color-warning-content: oklch(98% 0.026 102.212);
+  --color-warning-content: oklch(25% 0.04 255);
   --color-error: oklch(64% 0.246 16.439);
   --color-error-content: oklch(96% 0.015 12.422);
+
+  /* Border & Radius Properties */
   --radius-selector: 0.25rem;
   --radius-field: 0.25rem;
   --radius-box: 0.5rem;
