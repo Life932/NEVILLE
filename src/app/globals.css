@@ -4,34 +4,74 @@
 @plugin "daisyui/theme" {
   name: "neville";
   default: true;
-  prefersdark: true;
-  color-scheme: "dark";
-  --color-base-100: oklch(99% 0.01 255);
-  --color-base-200: oklch(96% 0.02 255);
-  --color-base-300: oklch(92% 0.03 255);
-  --color-base-content: oklch(25% 0.04 255);
-  --color-primary: oklch(55% 0.18 255);
-  --color-primary-content: oklch(100% 0 0);
-  --color-secondary: oklch(75% 0.12 230);
-  --color-secondary-content: oklch(25% 0.04 255);
-  --color-accent: oklch(62% 0.214 259.815);
-  --color-accent-content: oklch(97% 0.014 254.604);
-  --color-neutral: oklch(20% 0.04 255);
-  --color-neutral-content: oklch(100% 0 0);
-  --color-info: oklch(62% 0.214 259.815);
-  --color-info-content: oklch(97% 0.014 254.604);
-  --color-success: oklch(70% 0.14 182.503);
-  --color-success-content: oklch(98% 0.014 180.72);
-  --color-warning: oklch(79% 0.184 86.047);
-  --color-warning-content: oklch(98% 0.026 102.212);
-  --color-error: oklch(64% 0.246 16.439);
-  --color-error-content: oklch(96% 0.015 12.422);
-  --radius-selector: 0.25rem;
-  --radius-field: 0.25rem;
-  --radius-box: 0.5rem;
+  prefersdark: false;
+  color-scheme: "light";
+
+  /* ========================================= */
+  /* NEVILLE BRAND PALETTE                     */
+  /* ========================================= */
+
+  /* Primary: Royal Blue (Action, Trust, Core Brand) */
+  --color-primary: #4866fa;
+  --color-primary-content: #ffffff;
+
+  /* Secondary: Light Blue (Hover states, subtle highlights) */
+  --color-secondary: #99bcf2;
+  --color-secondary-content: #36454f; /* Dark text for contrast */
+
+  /* Neutral: Charcoal (Heavy UI blocks, Black Pills, Footers) */
+  --color-neutral: #36454f;
+  --color-neutral-content: #ffffff;
+
+  /* Accent: Mapped to Charcoal for dark highlights */
+  --color-accent: #36454f;
+  --color-accent-content: #ffffff;
+
+  /* ========================================= */
+  /* BASE CANVAS & TYPOGRAPHY                  */
+  /* ========================================= */
+
+  --color-base-100: #ffffff; /* Pure white canvas */
+  --color-base-200: #f4f7f9; /* Subtle off-white for section striping */
+  --color-base-300: #e2e8f0;
+  /* Charcoal text (Softer on the eyes than pure black) */
+  --color-base-content: #36454f;
+
+  /* ========================================= */
+  /* SYSTEM STATUS COLORS (Modernized)         */
+  /* ========================================= */
+
+  /* Info matches your Light Blue theme */
+  --color-info: #99bcf2;
+  --color-info-content: #36454f;
+
+  /* Crisp, tech-friendly Success Green */
+  --color-success: #10b981;
+  --color-success-content: #ffffff;
+
+  /* Clean Amber Warning */
+  --color-warning: #f59e0b;
+  --color-warning-content: #ffffff;
+
+  /* Sharp, urgent Error Red */
+  --color-error: #ef4444;
+  --color-error-content: #ffffff;
+
+  /* ========================================= */
+  /* BRUTALIST/AGENCY BORDERS                  */
+  /* ========================================= */
+  --radius-selector: 0rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;
   --size-selector: 0.25rem;
   --size-field: 0.25rem;
   --border: 1px;
   --depth: 1;
   --noise: 0;
+}
+
+/* Elite selection highlighting mapped to your Royal Blue */
+::selection {
+  background-color: #4866fa;
+  color: #ffffff;
 }
