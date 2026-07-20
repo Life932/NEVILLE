@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 /* ============================================================================
    DEV NOTE: HUMAAN EDITORIAL TYPOGRAPHY & ANIMATION — WHAT CHANGED HERE
@@ -57,6 +57,8 @@ const containerVariants = {
 };
 
 // Animation rules for each individual word
+// Note: `useReducedMotion` removed to avoid SSR hydration mismatch.
+// framer-motion >=10.16.4 handles `prefers-reduced-motion` automatically.
 const wordVariants = {
   hidden: { y: "120%", opacity: 0, rotateZ: 3 },
   show: {
@@ -76,20 +78,18 @@ const wordVariants = {
 // This still works correctly even if a line wraps — the mask just grows
 // to fit however many rows are actually rendered.
 function AnimatedLine({ text, className }) {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <span className="-mb-4 block w-full overflow-hidden pb-4 md:-mb-6 md:pb-6">
       <motion.span
         className={`flex flex-wrap gap-x-[0.28em] ${className}`}
         variants={containerVariants}
-        initial={shouldReduceMotion ? "show" : "hidden"}
+        initial="hidden"
         animate="show"
       >
         {text.split(" ").map((word, index) => (
           <motion.span
             key={index}
-            variants={shouldReduceMotion ? undefined : wordVariants}
+            variants={wordVariants}
             className="inline-block origin-bottom-left"
           >
             {word}
@@ -111,7 +111,6 @@ const tickerItems = [
 ];
 
 function ImpactTicker() {
-  const shouldReduceMotion = useReducedMotion();
   // Duplicated once so translating the track by exactly -50% loops seamlessly.
   const items = [...tickerItems, ...tickerItems];
 
@@ -119,12 +118,8 @@ function ImpactTicker() {
     <div className="flex h-full items-center overflow-hidden">
       <motion.div
         className="flex w-max shrink-0 items-center gap-8 whitespace-nowrap px-6 md:gap-12 md:px-12"
-        animate={shouldReduceMotion ? undefined : { x: ["0%", "-50%"] }}
-        transition={
-          shouldReduceMotion
-            ? undefined
-            : { duration: 24, ease: "linear", repeat: Infinity }
-        }
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{ duration: 24, ease: "linear", repeat: Infinity }}
       >
         {items.map((item, index) => (
           <span
@@ -141,8 +136,6 @@ function ImpactTicker() {
 }
 
 export default function Hero() {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     // DEV NOTE: bg-base-200 provides the soft icy off-white background.
     // No forced min-height on mobile — the section is exactly as tall as
@@ -163,9 +156,9 @@ export default function Hero() {
         {/* Eyebrow + CTA sit together on one row, right above the mission
             line — grounds the headline without needing top-of-page space. */}
         <motion.div
-          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: shouldReduceMotion ? 0 : 0.7, duration: 0.6 }}
+          transition={{ delay: 0.7, duration: 0.6 }}
           className="mb-3 flex flex-wrap items-center justify-between gap-3 md:mb-4"
         >
           <span className="text-[11px] font-bold tracking-[0.2em] text-neutral/60 uppercase md:text-xs">
@@ -184,9 +177,9 @@ export default function Hero() {
         {/* One-line mission statement — gives the giant headline context
             without competing with it for attention. */}
         <motion.p
-          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: shouldReduceMotion ? 0 : 0.9, duration: 0.6 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
           className="mb-6 max-w-md text-sm leading-snug text-neutral/70 md:mb-8 md:text-base"
         >
           We replace one-off charity with systemic support, real data, and
@@ -222,9 +215,9 @@ export default function Hero() {
           `mt-auto` to claim, so the ticker just follows the headline
           directly with no gap. */}
       <motion.div
-        initial={shouldReduceMotion ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
+        initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: shouldReduceMotion ? 0 : 0.6, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ delay: 0.6, duration: 1, ease: [0.16, 1, 0.3, 1] }}
         className="z-20 mt-auto h-[12vh] w-full min-h-16 rounded-t-[2.5rem] bg-base-100 shadow-[0_-10px_40px_rgba(0,0,0,0.03)] md:h-[16vh] md:rounded-t-[4rem]"
       >
         <ImpactTicker />
