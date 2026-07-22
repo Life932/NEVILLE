@@ -1,9 +1,9 @@
-import InfoSection from "../ui/home/InfoSection";
+import InitiativesGrid from "../ui/home/InitiativesGrid";
 
 export default function InitiativesPage() {
   return (
     <div className="w-full">
-      <InfoSection />
+      <InitiativesGrid />
     </div>
   );
 }

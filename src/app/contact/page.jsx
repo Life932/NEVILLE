@@ -18,7 +18,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     // DEV NOTE: 'bg-[#E5EDFF]' maintains the brand's soft icy-blue identity.
-    <main className="min-h-screen bg-[#E5EDFF] flex flex-col w-full overflow-hidden">
+    <div className="min-h-screen bg-[#E5EDFF] flex flex-col w-full overflow-hidden">
       {/* ================================================================== */}
       {/* PART 1: THE SPLIT HERO (Text Left, Floating 3D Object Right)       */}
       {/* ================================================================== */}
@@ -141,6 +141,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
