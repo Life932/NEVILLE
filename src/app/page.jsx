@@ -1,3 +1,4 @@
+import Hero from "./ui/home/Hero";
 import Hero2 from "./ui/home/Hero2";
 import InfoSection from "./ui/home/InfoSection";
 import ImpactGrid from "./ui/home/ImpactGrid";
@@ -6,6 +7,7 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Hero Section at the very top */}
+      <Hero />
       <Hero2 />
       <InfoSection />
       <ImpactGrid />

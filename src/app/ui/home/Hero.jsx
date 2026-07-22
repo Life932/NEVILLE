@@ -118,7 +118,7 @@ function ImpactTicker() {
     <div className="flex h-full items-center overflow-hidden">
       <motion.div
         className="flex w-max shrink-0 items-center gap-8 whitespace-nowrap px-6 md:gap-12 md:px-12"
-        animate={{ x: ["0%", "-50%"] }}
+        animate={{ x: ["0%", "-25%"] }}
         transition={{ duration: 24, ease: "linear", repeat: Infinity }}
       >
         {items.map((item, index) => (
@@ -159,7 +159,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.6 }}
-          className="mb-3 flex flex-wrap items-center justify-between gap-3 md:mb-4"
+          className="mb-3 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3 md:mb-4"
         >
           <span className="text-[11px] font-bold tracking-[0.2em] text-neutral/60 uppercase md:text-xs">
             Dhaka &middot; Youth-Led Ecosystem
@@ -218,9 +218,11 @@ export default function Hero() {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.6, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        className="z-20 mt-auto h-[12vh] w-full min-h-16 rounded-t-[2.5rem] bg-base-100 shadow-[0_-10px_40px_rgba(0,0,0,0.03)] md:h-[16vh] md:rounded-t-[4rem]"
+        className="z-20 mt-auto h-10 w-full min-h-10 rounded-t-2xl bg-base-100 shadow-[0_-4px_20px_rgba(0,0,0,0.03)] md:h-[16vh] md:min-h-16 md:rounded-t-[3rem] lg:rounded-t-[4rem]"
       >
-        <ImpactTicker />
+        <div className="flex h-full items-center border-t border-neutral/10 md:border-t-0">
+          <ImpactTicker />
+        </div>
       </motion.div>
     </section>
   );

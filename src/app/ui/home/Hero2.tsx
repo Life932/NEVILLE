@@ -41,7 +41,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="hero relative flex min-h-[100svh] items-center overflow-hidden md:min-h-[calc(100vh-4.5rem)]">
+    <section className="hero relative flex min-h-[100svh] items-center overflow-hidden selection:bg-primary selection:text-white md:min-h-[calc(100vh-4.5rem)]">
       {/* ========================================= */}
       {/* BACKGROUND IMAGE                          */}
       {/* ========================================= */}
@@ -75,12 +75,15 @@ export default function Hero() {
       <div className="absolute inset-0 hidden bg-linear-to-r from-black/95 via-black/65 to-black/10 md:block" />
       {/* Bottom vignette so the stats/partner row stays legible over any
           part of the photo, regardless of what's in that corner. */}
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black/70 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-black/70 to-transparent md:h-40" />
+      {/* Soft top gradient helps the hero blend with the light Hero.jsx above
+          on mobile, preventing a hard edge. */}
+      <div className="absolute inset-x-0 top-0 h-20 bg-linear-to-b from-black/40 to-transparent md:hidden" />
 
       {/* ========================================= */}
       {/* HERO CONTENT AREA                         */}
       {/* ========================================= */}
-      <div className="hero-content relative z-10 w-full max-w-7xl flex-col items-start px-5 py-14 text-left sm:px-8 md:py-10 lg:px-16">
+      <div className="hero-content relative z-10 w-full max-w-7xl flex-col items-start px-5 py-10 text-left sm:px-8 sm:py-12 md:py-10 lg:px-16">
         <div className="w-full max-w-2xl text-neutral-content xl:max-w-3xl">
           {/* EYEBROW */}
           {/* DEV NOTE: this label carries real info (who + where), not
@@ -95,7 +98,7 @@ export default function Hero() {
               here — this line matters a lot for discoverability. If Bengali
               support is added later, check ligature rendering (e.g. Noto
               Sans Bengali) before swapping fonts. */}
-          <h1 className="mb-4 text-[2.75rem] leading-[1.05] font-extrabold tracking-tight text-balance text-white drop-shadow-2xl sm:text-6xl md:mb-6 lg:text-7xl">
+          <h1 className="mb-3 text-[2rem] leading-[1.05] font-extrabold tracking-tight text-balance text-white drop-shadow-2xl sm:text-[2.75rem] sm:mb-4 md:mb-6 md:text-6xl lg:text-7xl">
             Empowering youth,
             <br />
             <span className="relative inline-block text-accent">
@@ -124,7 +127,7 @@ export default function Hero() {
           </h1>
 
           {/* SUB-HEADLINE */}
-          <p className="mb-6 max-w-xl text-sm leading-snug font-medium text-gray-100 opacity-90 drop-shadow-lg sm:text-base md:mb-7 md:text-lg md:leading-relaxed lg:text-xl">
+          <p className="mb-6 max-w-xl text-sm leading-snug font-medium text-gray-100 opacity-90 drop-shadow-lg sm:text-base sm:mb-7 md:text-lg md:leading-relaxed lg:text-xl">
             NEVILLE is a youth-led ecosystem based in Dhaka. We replace
             one-off charity with systemic support, data-driven research, and
             peer-to-peer mentorship.
@@ -161,7 +164,7 @@ export default function Hero() {
             2. Consider `react-countup` for a count-up-from-0 effect — a
                nice trust-builder, but skip it if it starts feeling gimmicky.
           */}
-          <div className="mb-8 flex items-stretch gap-6 md:mb-10 md:gap-10">
+          <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-stretch sm:gap-6 md:mb-10 md:gap-10">
             <div className="flex flex-col">
               <span className="text-3xl font-extrabold tracking-tight tabular-nums text-accent drop-shadow-xl sm:text-4xl md:text-5xl">
                 ৳28K+
@@ -170,9 +173,9 @@ export default function Hero() {
                 Community funds mobilized
               </span>
             </div>
-            <div aria-hidden="true" className="w-px bg-white/20" />
+            <div aria-hidden="true" className="hidden h-px w-full bg-white/20 sm:block sm:h-auto sm:w-px" />
             <div className="flex flex-col">
-              <span className="text-3xl font-extrabold tracking-tight tabular-nums text-accent drop-shadow-xl sm:text-4xl md:text-5xl">
+              <span className="text-2xl font-extrabold tracking-tight tabular-nums text-accent drop-shadow-xl sm:text-3xl md:text-4xl lg:text-5xl">
                 20+
               </span>
               <span className="mt-1 text-[10px] font-bold uppercase tracking-widest text-white/80 sm:text-xs">
@@ -187,11 +190,11 @@ export default function Hero() {
             variant) as soon as they're available — wordmarks are a
             placeholder that at least don't misrepresent them as icons.
           */}
-          <div className="flex flex-col gap-3 border-t border-white/15 pt-5 sm:flex-row sm:items-center sm:gap-5 md:pt-6">
+          <div className="flex flex-col gap-2 border-t border-white/15 pt-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 md:pt-6 md:gap-5">
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
               Working alongside
             </span>
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-5">
               <Link
                 href="#"
                 aria-label="Partner: MUBC"
