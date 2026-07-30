@@ -2,72 +2,51 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #36454f;
-    --card: #ffffff;
-    --card-foreground: #36454f;
-    --popover: #ffffff;
-    --popover-foreground: #36454f;
-    --primary: #4866fa;
+    --background: #f4f7fc; /* Soft Icy White */
+    --foreground: #36454f; /* Charcoal */
+    --primary: #4866fa; /* Royal Blue */
     --primary-foreground: #ffffff;
     --secondary: #99bcf2;
     --secondary-foreground: #36454f;
-    --muted: #e5edff;
+    --muted: #e5edff; /* Icy Blue for Cards/Sections */
     --muted-foreground: #36454f;
-    --accent: #e5edff;
-    --accent-foreground: #36454f;
-    --destructive: #ef4444;
-    --destructive-foreground: #ffffff;
-    --border: #e5edff;
-    --input: #e5edff;
-    --ring: #4866fa;
-    --radius: 0.75rem;
+    --border: #d1def0;
+    --radius: 1rem; /* Cute, soft roundness */
   }
-
   .dark {
-    --background: #ffffff;
-    --foreground: #36454f;
-    --card: #ffffff;
-    --card-foreground: #36454f;
-    --popover: #ffffff;
-    --popover-foreground: #36454f;
-    --primary: #4866fa;
+    --background: #0f172a; /* Deep Mesmerizing Slate */
+    --foreground: #f8fafc; /* Soft Off-White */
+    --primary: #4866fa; /* Royal Blue */
     --primary-foreground: #ffffff;
-    --secondary: #99bcf2;
-    --secondary-foreground: #36454f;
-    --muted: #e5edff;
-    --muted-foreground: #36454f;
-    --accent: #e5edff;
-    --accent-foreground: #36454f;
-    --destructive: #ef4444;
-    --destructive-foreground: #ffffff;
-    --border: #e5edff;
-    --input: #e5edff;
-    --ring: #4866fa;
-    --radius: 0.75rem;
+    --secondary: #1e293b; 
+    --secondary-foreground: #f8fafc;
+    --muted: #1e293b; /* Dark Slate for Cards/Sections */
+    --muted-foreground: #94a3b8;
+    --border: #334155;
   }
 }
 
 @theme inline {
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
+  --color-card: var(--background);
+  --color-card-foreground: var(--foreground);
+  --color-popover: var(--background);
+  --color-popover-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
+  --color-accent: var(--muted);
+  --color-accent-foreground: var(--muted-foreground);
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
   --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
+  --color-input: var(--border);
+  --color-ring: var(--primary);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
