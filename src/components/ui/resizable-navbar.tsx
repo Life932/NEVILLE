@@ -206,7 +206,7 @@ export const NavItems = ({
             >
               <span
                 className={cn(
-                  "absolute bottom-1 left-3 right-3 h-[2px] bg-[#4866FA] rounded-full transition-all duration-200 ease-out origin-left pointer-events-none",
+                  "absolute bottom-1 left-3 right-3 h-[2px] bg-[#4866FA] rounded-full transition-all duration-200 ease-out origin-left",
                   hovered === idx || isActive ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
                 )}
               />
