@@ -206,7 +206,7 @@ export const NavItems = ({
             >
               <span
                 className={cn(
-                  "absolute bottom-1 left-3 right-3 h-[2px] bg-[#4866FA] rounded-full transition-all duration-200 ease-out origin-left",
+                  "absolute bottom-1 left-3 right-3 h-[2px] bg-[#4866FA] rounded-full transition-all duration-200 ease-out origin-left pointer-events-none",
                   hovered === idx || isActive ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
                 )}
               />
@@ -332,6 +332,10 @@ export const ResizableNavbar = () => {
   // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
+    // Auto-expand activities accordion if currently on an activities route
+    if (pathname.startsWith("/activities")) {
+      setActivitiesExpanded(true);
+    }
   }, [pathname]);
 
   return (
@@ -411,7 +415,7 @@ export const ResizableNavbar = () => {
 
                         {/* Collapsible Accordion Sub-items */}
                         <AnimatePresence>
-                          {(activitiesExpanded || pathname.startsWith("/activities")) && (
+                          {activitiesExpanded && (
                             <motion.div
                               initial={{ opacity: 0, height: 0 }}
                               animate={{ opacity: 1, height: "auto" }}
