@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :root {
     --background: #f4f7fc; /* Soft Icy White */
@@ -11,16 +13,16 @@
     --muted: #e5edff; /* Icy Blue for Cards/Sections */
     --muted-foreground: #36454f;
     --border: #d1def0;
-    --radius: 1rem; /* Cute, soft roundness */
+    --radius: 1rem; /* Soft roundness */
   }
   .dark {
-    --background: #0f172a; /* Deep Mesmerizing Slate */
+    --background: #0f172a; /* Deep Slate */
     --foreground: #f8fafc; /* Soft Off-White */
     --primary: #4866fa; /* Royal Blue */
     --primary-foreground: #ffffff;
     --secondary: #1e293b; 
     --secondary-foreground: #f8fafc;
-    --muted: #1e293b; /* Dark Slate for Cards/Sections */
+    --muted: #1e293b; 
     --muted-foreground: #94a3b8;
     --border: #334155;
   }
