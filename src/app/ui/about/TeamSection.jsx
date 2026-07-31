@@ -43,7 +43,7 @@ const CO_FOUNDERS = [
     role: "Co-Founder",
     title: "Head of Finance",
     quote:
-      "Believing that local action in our neighborhoods leads to global ripples of meaningful change.",
+      "Believing that strong local action in our neighborhoods leads to global ripples of meaningful change.",
     image: "/Joy.jpg",
     socials: { facebook: "#", instagram: "#", linkedin: "#" },
     gridClass: "lg:col-start-3 lg:row-start-2",
