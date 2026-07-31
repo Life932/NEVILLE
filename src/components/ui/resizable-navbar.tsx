@@ -155,6 +155,17 @@ export const NavItems = ({
   const [hovered, setHovered] = useState<number | null>(null);
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
 
+  // Reset hover state on route change
+  useEffect(() => {
+    setHovered(null);
+    setDropdownOpen(false);
+  }, [pathname]);
+
+  const handleLinkClick = () => {
+    setHovered(null);
+    setDropdownOpen(false);
+  };
+
   return (
     <div
       onMouseLeave={() => {
@@ -184,6 +195,7 @@ export const NavItems = ({
           >
             <Link
               href={item.href}
+              onClick={handleLinkClick}
               className={cn(
                 "relative flex items-center rounded-full text-[15px] font-semibold transition-colors duration-200 cursor-pointer min-h-[44px]",
                 hasSub ? "pl-4 pr-2.5 gap-1" : "px-4 py-2.5",
@@ -192,13 +204,12 @@ export const NavItems = ({
                   : "text-[#36454F] dark:text-slate-300 hover:text-[#4866FA] dark:hover:text-white"
               )}
             >
-              {hovered === idx && (
-                <motion.div
-                  layoutId="hoverBg"
-                  className="absolute inset-0 h-full w-full rounded-full bg-[#4866FA]/10 dark:bg-white/10"
-                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                />
-              )}
+              <span
+                className={cn(
+                  "absolute bottom-1 left-3 right-3 h-[2px] bg-[#4866FA] rounded-full transition-all duration-200 ease-out origin-left pointer-events-none",
+                  hovered === idx || isActive ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+                )}
+              />
               <span className="relative z-10">{item.name}</span>
               {hasSub && (
                 <ChevronDown
@@ -229,6 +240,7 @@ export const NavItems = ({
                         <Link
                           key={sub.name}
                           href={sub.href}
+                          onClick={handleLinkClick}
                           className={cn(
                             "flex items-center w-full px-3.5 py-2.5 text-sm font-medium rounded-xl transition-colors min-h-[44px]",
                             isSubActive
