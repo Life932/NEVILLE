@@ -24,13 +24,13 @@ export default function ActivitiesClient({ initialActivities }) {
   const getTitle = () => {
     switch (activeTab) {
       case "event":
-        return "Activities / Events";
+        return "ALL EVENTS";
       case "publication":
-        return "Activities / Publications";
+        return "ALL PUBLICATIONS";
       case "initiative":
-        return "Activities / Initiatives";
+        return "ALL INITIATIVES";
       default:
-        return "Activities / All";
+        return "ALL ACTIVITIES";
     }
   };
 
