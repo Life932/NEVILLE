@@ -21,9 +21,8 @@ import { Menu, X } from "lucide-react";
 const NAV_LINKS = [
   { name: "Home", href: "/", color: "#4866FA" },
   { name: "About", href: "/about", color: "#99BCF2" },
-  { name: "Olympiads", href: "/olympiads", color: "#4866FA" },
-  { name: "Initiatives", href: "/initiatives", color: "#99BCF2" },
-  { name: "Journal", href: "/journal", color: "#4866FA" },
+  { name: "Activities", href: "/activities", color: "#4866FA" },
+  { name: "Journal", href: "/journal", color: "#99BCF2" },
   { name: "Gallery", href: "/gallery", color: "#99BCF2" },
   { name: "Ledger", href: "/ledger", color: "#4866FA" },
   { name: "Contact", href: "/contact", color: "#99BCF2" },
