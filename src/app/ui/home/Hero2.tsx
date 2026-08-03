@@ -41,7 +41,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="hero relative flex min-h-[100svh] items-center overflow-hidden selection:bg-primary selection:text-white md:min-h-[calc(100vh-4.5rem)]">
+    <section className="hero relative flex min-h-[calc(100svh-4rem)] items-center overflow-hidden selection:bg-primary selection:text-white md:min-h-[calc(100vh-4.5rem)]">
       {/* ========================================= */}
       {/* BACKGROUND IMAGE                          */}
       {/* ========================================= */}

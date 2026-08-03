@@ -14,8 +14,8 @@ import { HandHeart, Menu } from "lucide-react";
  */
 const NAV_LINKS = [
   { name: "Home", href: "/" },
-  // { name: "Initiatives", href: "/initiatives" },
-  // { name: "Donation Info", href: "/donation-info" },
+  { name: "Initiatives", href: "/initiatives" },
+  { name: "Donation Info", href: "/donation-info" },
   { name: "About Us", href: "/about" },
   { name: "Contact Us", href: "/contact" },
 ];
@@ -63,7 +63,7 @@ export default function Navbar() {
             className="btn btn-ghost lg:hidden focus:bg-transparent! active:bg-transparent! hover:bg-transparent!"
             aria-label="Open Mobile Navigation"
           >
-            <Menu className="h-6 w-6" />
+            <Menu size={24} strokeWidth={2} className="text-white" />
           </div>
 
           <ul
@@ -94,8 +94,10 @@ export default function Navbar() {
            LOGO SECTION
            DEV NOTE: 'priority' on <Image> is a Next.js best practice for logos 
            to improve LCP (Largest Contentful Paint) and SEO rankings.
+           On mobile the logo is smaller (w-16) so the hamburger, logo, and
+           Donate button all fit comfortably on one row without crowding.
         */}
-        <div className="lg:pl-8 pl-4">
+        <div className="lg:pl-8 pl-2 sm:pl-4">
           <Link
             href="/"
             onClick={handleLinkClick}
@@ -107,7 +109,7 @@ export default function Navbar() {
               alt="NEVILLE Organization Logo"
               width={200} // Set optimized width
               height={100} // Set optimized height
-              className="w-20 h-auto object-contain"
+              className="w-16 h-auto object-contain sm:w-20"
               priority
             />
           </Link>
@@ -144,19 +146,21 @@ export default function Navbar() {
       {/* ----------------------------- */}
       {/* END: Call to Action (Donate)  */}
       {/* ----------------------------- */}
-      <div className="navbar-end lg:pr-10 pr-2">
+      <div className="navbar-end lg:pr-10 pr-1 sm:pr-2">
         {/* 
            DEV NOTE: External Links Best Practice
            Always include target="_blank" and rel="noopener noreferrer" 
            for links leading away from your site for security and performance.
+           On mobile the button is compact (btn-sm, smaller icon) so it doesn't
+           crowd the hamburger and logo on narrow screens.
         */}
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSeX0mLA_rme9yY6-YeERKpTCVAvHdHHP7S1F6ieA6yg5CBZtg/viewform"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-primary btn-md lg:w-40 text-lg rounded-full text-white shadow-md flex items-center gap-2 border-none transition-transform hover:scale-105"
+          className="btn btn-primary btn-sm sm:btn-md lg:w-40 text-sm sm:text-lg rounded-full text-white shadow-md flex items-center gap-1.5 sm:gap-2 border-none transition-transform hover:scale-105"
         >
-          <HandHeart className="w-5 h-5" />
+          <HandHeart className="w-4 h-4 sm:w-5 sm:h-5" />
           <span>Donate</span>
         </a>
       </div>

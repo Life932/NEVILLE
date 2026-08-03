@@ -273,7 +273,7 @@ export default function TeamSection() {
               */
               <article
                 key={founder.id}
-                className={`bg-base-100 text-neutral rounded-[2.5rem] p-8 shadow-2xl flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-500 group ${founder.gridClass}`}
+                className={`bg-base-100 text-neutral rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 shadow-2xl flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-500 group ${founder.gridClass}`}
               >
                 {/* 
                   DEV NOTE: IMAGE OPTIMIZATION
@@ -342,7 +342,7 @@ export default function TeamSection() {
                 {dept.members.map((member, idx) => (
                   <article
                     key={idx}
-                    className="bg-[#9EB8FF] rounded-[2.5rem] p-6 sm:p-8 text-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col items-center"
+                    className="bg-[#9EB8FF] rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-8 text-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col items-center"
                   >
                     <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden shadow-inner ring-4 ring-white/30 group-hover:ring-white/60 transition-all">
                       <Image

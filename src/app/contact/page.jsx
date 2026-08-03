@@ -22,7 +22,7 @@ export default function ContactPage() {
       {/* ================================================================== */}
       {/* PART 1: THE SPLIT HERO (Text Left, Floating 3D Object Right)       */}
       {/* ================================================================== */}
-      <section className="relative w-full pt-24 pb-16 md:pt-28 md:pb-24 px-6 md:px-12 lg:px-20">
+      <section className="relative w-full pt-10 pb-16 md:pt-14 md:pb-24 px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* LEFT: TYPOGRAPHY & BUTTON */}
           {/* 

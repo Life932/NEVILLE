@@ -147,12 +147,13 @@ export default function Hero() {
       {/* ========================================= */}
       {/* MAIN TYPOGRAPHY (Bottom-Left Aligned)     */}
       {/* ========================================= */}
-      {/* DEV NOTE: `pt-24`/`pt-28`/`pt-32` clears the floating pill navbar.
-          The block stacks naturally (no flex-grow, no forced centering) so
-          there's no room for an accidental dead zone above it — the only
-          intentional extra space is below, absorbed by the ticker's
-          `mt-auto` on larger screens. */}
-      <div className="z-10 flex w-full flex-col px-6 pt-24 pb-6 sm:pt-28 md:px-12 md:pb-8 lg:px-20 lg:pt-32">
+      {/* DEV NOTE: The navbar is now a sticky in-flow bar (not a floating
+          pill), so it takes up flow space and no longer overlays the hero.
+          We use a modest `pt-10`/`pt-14`/`pt-16` for breathing room instead
+          of the large offsets that were needed to clear the old floating
+          pill. This removes the big empty gap that used to sit above the
+          headline on mobile. */}
+      <div className="z-10 flex w-full flex-col px-6 pt-10 pb-6 sm:pt-14 md:px-12 md:pb-8 lg:px-20 lg:pt-16">
         {/* Eyebrow + CTA sit together on one row, right above the mission
             line — grounds the headline without needing top-of-page space. */}
         <motion.div

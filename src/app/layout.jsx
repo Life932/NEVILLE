@@ -1,7 +1,6 @@
 import "./globals.css";
 import Navbar from "./ui/Navbar";
 import Footer from "./ui/Footer";
-import FloatingNav from "./ui/FloatingNav";
 // Inter Font for Charity Organization Website
 import { Inter } from "next/font/google";
 
@@ -21,11 +20,11 @@ export default function RootLayout({ children }) {
     <html lang="en" data-theme="neville">
       {/* 3. Applying the Font */}
       <body
-        className={`${inter.className} antialiased flex flex-col min-h-screen`}
+        className={`${inter.className} antialiased flex min-h-screen flex-col bg-base-100 text-base-content`}
       >
-        <FloatingNav />
+        <Navbar />
 
-        <main className="grow">{children}</main>
+        <main className="grow bg-base-100 text-base-content">{children}</main>
 
         <Footer />
       </body>
