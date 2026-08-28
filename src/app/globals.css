@@ -3,28 +3,49 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
+  /* =========================================================================
+     LIGHT THEME: Warm Cream + Editorial Royal Ink + Mulberry Berry
+     ========================================================================= */
   :root {
-    --background: #f4f7fc; /* Soft Icy White */
-    --foreground: #36454f; /* Charcoal */
-    --primary: #4866fa; /* Royal Blue */
-    --primary-foreground: #ffffff;
-    --secondary: #99bcf2;
-    --secondary-foreground: #36454f;
-    --muted: #e5edff; /* Icy Blue for Cards/Sections */
-    --muted-foreground: #36454f;
-    --border: #d1def0;
-    --radius: 1rem; /* Soft roundness */
+    --background: #faf7f2;          /* Warm Cream Canvas */
+    --foreground: #2b2623;          /* Deep Warm Charcoal Text */
+    
+    --primary: #1b4580;             /* Editorial Royal Ink Blue */
+    --primary-foreground: #faf7f2;
+    
+    --secondary: #b83b5e;           /* Rich Mulberry Berry Pink */
+    --secondary-foreground: #faf7f2;
+    
+    --accent: #b83b5e;              /* Berry Pink for tags, dates & badges */
+    --accent-foreground: #faf7f2;
+    
+    --muted: #f4efe7;              /* Soft Parchment Card Surface */
+    --muted-foreground: #786f66;    /* Warm taupe secondary text */
+    
+    --border: #e3dbce;              /* Soft clay hairline border */
+    --radius: 0.875rem;             /* 14px Organic rounded radius */
   }
+
+  /* =========================================================================
+     DARK THEME: Warm Espresso Charcoal + Luminous Royal + Soft Mulberry
+     ========================================================================= */
   .dark {
-    --background: #0f172a; /* Deep Slate */
-    --foreground: #f8fafc; /* Soft Off-White */
-    --primary: #4866fa; /* Royal Blue */
-    --primary-foreground: #ffffff;
-    --secondary: #1e293b; 
-    --secondary-foreground: #f8fafc;
-    --muted: #1e293b; 
-    --muted-foreground: #94a3b8;
-    --border: #334155;
+    --background: #1c1917;          /* Warm Espresso Charcoal Canvas */
+    --foreground: #f2ece4;          /* Soft Parchment Cream Text */
+    
+    --primary: #5b8cd6;             /* Luminous Royal Sky Blue */
+    --primary-foreground: #1c1917;
+    
+    --secondary: #de6583;           /* Soft Mulberry Berry Rose */
+    --secondary-foreground: #1c1917;
+    
+    --accent: #de6583;              /* Mulberry Accent for highlights & badges */
+    --accent-foreground: #1c1917;
+    
+    --muted: #26221f;              /* Elevated Warm Walnut Slate Surface */
+    --muted-foreground: #a3988c;    /* Warm stone muted text */
+    
+    --border: #38322c;              /* Warm dark divider */
   }
 }
 
@@ -32,9 +53,9 @@
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-card: var(--background);
+  --color-card: var(--muted);
   --color-card-foreground: var(--foreground);
-  --color-popover: var(--background);
+  --color-popover: var(--muted);
   --color-popover-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
@@ -42,20 +63,50 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--muted);
-  --color-accent-foreground: var(--muted-foreground);
-  --color-destructive: #ef4444;
-  --color-destructive-foreground: #ffffff;
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: #c44d4d;
+  --color-destructive-foreground: #faf7f2;
   --color-border: var(--border);
   --color-input: var(--border);
   --color-ring: var(--primary);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 6px);
 }
 
 ::selection {
-  background-color: #4866fa;
-  color: #ffffff;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* =========================================================================
+   NEO-MINIMALIST WARM TEXTURE & WARM SHADOW UTILITIES
+   ========================================================================= */
+
+/* Warm-tinted shadows (No cold, harsh pure black shadows) */
+.shadow-neo-sm {
+  box-shadow: 0 1px 3px rgba(43, 38, 35, 0.04);
+}
+.shadow-neo-md {
+  box-shadow: 0 2px 8px rgba(43, 38, 35, 0.06);
+}
+.shadow-neo-lg {
+  box-shadow: 0 4px 16px rgba(43, 38, 35, 0.08);
+}
+
+/* Optional Paper / Linen Grain Texture Overlay */
+.neo-paper-texture {
+  position: relative;
+}
+.neo-paper-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Crect width='1' height='1' x='0' y='1' fill='%23786F66' opacity='0.4'/%3E%3Crect width='1' height='1' x='3' y='4' fill='%23786F66' opacity='0.3'/%3E%3Crect width='1' height='1' x='6' y='0' fill='%23786F66' opacity='0.35'/%3E%3Crect width='1' height='1' x='1' y='6' fill='%23786F66' opacity='0.25'/%3E%3Crect width='1' height='1' x='5' y='7' fill='%23786F66' opacity='0.3'/%3E%3C/svg%3E");
+  background-size: 8px 8px;
+  pointer-events: none;
+  border-radius: inherit;
 }
