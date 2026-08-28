@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
           >
           <ResizableNavbar />
 
-            <main className="grow pt-20">{children}</main>
+            <main className="grow">{children}</main>
 
           <Footer />
           </ClickSpark>
