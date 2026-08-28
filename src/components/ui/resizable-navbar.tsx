@@ -91,8 +91,8 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       animate={{
         backdropFilter: visible ? "blur(20px)" : "blur(12px)",
         boxShadow: visible
-          ? "0 10px 35px -10px rgba(72, 102, 250, 0.15), 0 4px 20px -2px rgba(0, 0, 0, 0.05)"
-          : "0 4px 25px -4px rgba(0, 0, 0, 0.04)",
+          ? "0 10px 30px -10px rgba(43, 38, 35, 0.08)"
+          : "0 2px 10px -2px rgba(43, 38, 35, 0.04)",
         width: visible ? "90%" : "100%",
         y: visible ? 4 : 0,
       }}
@@ -103,11 +103,9 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       }}
       className={cn(
         "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between rounded-full border px-6 py-2.5 transition-all duration-300 lg:flex",
-        // LIGHT THEME: Pristine glassy translucent white pill with blur
-        // DARK THEME: Pristine glassy dark slate pill with blur
         visible
-          ? "bg-white/85 border-[#d1def0] shadow-md dark:bg-[#0f172a]/90 dark:border-slate-800 text-[#36454F] dark:text-white"
-          : "bg-white/75 border-white/80 dark:bg-[#0f172a]/75 dark:border-slate-800/60 text-[#36454F] dark:text-white",
+          ? "bg-card/90 border-border shadow-neo-md text-foreground backdrop-blur-xl"
+          : "bg-card/75 border-border/80 text-foreground backdrop-blur-lg",
         className
       )}
     >
@@ -129,11 +127,11 @@ export const NavbarLogo = () => {
       href="/"
       className="relative z-20 mr-6 flex items-center space-x-2 py-1 text-lg font-extrabold tracking-tight transition-opacity hover:opacity-90 min-h-[44px]"
     >
-      <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#4866FA] text-white font-black text-sm shadow-md">
+      <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-primary text-primary-foreground font-black text-sm shadow-neo-sm">
         N
       </div>
-      <span className="font-bold tracking-tight text-lg text-[#36454F] dark:text-white transition-colors duration-300">
-        NEVILLE<span className="text-[#4866FA]">.</span>
+      <span className="font-bold tracking-tight text-lg text-foreground transition-colors duration-300">
+        NEVILLE<span className="text-primary">.</span>
       </span>
     </Link>
   );
@@ -200,13 +198,13 @@ export const NavItems = ({
                 "relative flex items-center rounded-full text-[15px] font-semibold transition-colors duration-200 cursor-pointer min-h-[44px]",
                 hasSub ? "pl-4 pr-2.5 gap-1" : "px-4 py-2.5",
                 isActive
-                  ? "text-[#4866FA] font-bold"
-                  : "text-[#36454F] dark:text-slate-300 hover:text-[#4866FA] dark:hover:text-white"
+                  ? "text-primary font-bold"
+                  : "text-muted-foreground hover:text-primary"
               )}
             >
               <span
                 className={cn(
-                  "absolute bottom-1 left-3 right-3 h-[2px] bg-[#4866FA] rounded-full transition-all duration-200 ease-out origin-left pointer-events-none",
+                  "absolute bottom-1 left-3 right-3 h-[2px] bg-primary rounded-full transition-all duration-200 ease-out origin-left pointer-events-none",
                   hovered === idx || isActive ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
                 )}
               />
@@ -216,8 +214,8 @@ export const NavItems = ({
                   className={cn(
                     "relative z-10 w-4 h-4 transition-transform duration-200",
                     hovered === idx && dropdownOpen
-                      ? "rotate-180 text-[#4866FA]"
-                      : "text-[#36454F]/70 dark:text-slate-400"
+                      ? "rotate-180 text-primary"
+                      : "text-muted-foreground"
                   )}
                 />
               )}
@@ -232,7 +230,7 @@ export const NavItems = ({
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 8, scale: 0.95 }}
                     transition={{ duration: 0.15, ease: "easeOut" }}
-                    className="absolute top-full left-0 mt-2 w-48 rounded-2xl border border-[#e5edff] dark:border-slate-800 bg-white/90 dark:bg-[#0f172a]/95 backdrop-blur-2xl p-1.5 shadow-2xl z-50 transition-colors duration-200 text-[#36454F] dark:text-slate-200"
+                    className="absolute top-full left-0 mt-2 w-48 rounded-2xl border border-border bg-card/95 backdrop-blur-2xl p-1.5 shadow-neo-lg z-50 transition-colors duration-200 text-foreground"
                   >
                     {item.subItems!.map((sub) => {
                       const isSubActive = pathname === sub.href;
@@ -244,8 +242,8 @@ export const NavItems = ({
                           className={cn(
                             "flex items-center w-full px-3.5 py-2.5 text-sm font-medium rounded-xl transition-colors min-h-[44px]",
                             isSubActive
-                              ? "bg-[#4866FA] text-white font-bold"
-                              : "text-[#36454F] dark:text-slate-200 hover:bg-[#4866FA]/10 hover:text-[#4866FA] dark:hover:bg-[#4866FA]/20 dark:hover:text-[#4866FA]"
+                              ? "bg-primary text-primary-foreground font-bold"
+                              : "text-foreground hover:bg-primary/10 hover:text-primary"
                           )}
                         >
                           {sub.name}
@@ -280,7 +278,7 @@ export const NavbarButton = ({
     <Link
       href={href}
       className={cn(
-        "relative inline-flex items-center justify-center px-5 py-2.5 min-h-[44px] rounded-full text-sm font-bold text-white bg-[#4866FA] shadow-md hover:bg-[#3b55e6] hover:shadow-lg active:scale-95 transition-all duration-200 cursor-pointer",
+        "relative inline-flex items-center justify-center px-5 py-2.5 min-h-[44px] rounded-full text-sm font-bold text-primary-foreground bg-primary shadow-neo-sm hover:opacity-90 active:scale-95 transition-all duration-200 cursor-pointer",
         className
       )}
     >
@@ -299,16 +297,16 @@ export const MobileNav = ({ children, className, visible }: NavBodyProps) => {
       animate={{
         backdropFilter: visible ? "blur(20px)" : "blur(12px)",
         boxShadow: visible
-          ? "0 10px 35px -10px rgba(72, 102, 250, 0.12)"
-          : "0 4px 20px -4px rgba(0, 0, 0, 0.03)",
+          ? "0 10px 30px -10px rgba(43, 38, 35, 0.08)"
+          : "0 2px 10px -2px rgba(43, 38, 35, 0.04)",
         y: visible ? 2 : 0,
       }}
       transition={{ type: "spring", stiffness: 200, damping: 35 }}
       className={cn(
         "relative z-50 mx-auto flex w-full flex-col items-center justify-between rounded-2xl border px-4 py-2.5 transition-all duration-300 lg:hidden",
         visible
-          ? "bg-white/85 border-[#e5edff] dark:bg-[#0f172a]/90 dark:border-slate-800 text-[#36454F] dark:text-white"
-          : "bg-white/70 border-white/80 dark:bg-[#0f172a]/70 dark:border-slate-800/60 text-[#36454F] dark:text-white",
+          ? "bg-card/90 border-border text-foreground shadow-neo-sm"
+          : "bg-card/75 border-border/80 text-foreground",
         className
       )}
     >
@@ -332,7 +330,6 @@ export const ResizableNavbar = () => {
   // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
-    // Auto-expand activities accordion if currently on an activities route
     if (pathname.startsWith("/activities")) {
       setActivitiesExpanded(true);
     }
@@ -359,7 +356,7 @@ export const ResizableNavbar = () => {
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2.5 rounded-xl border border-border bg-background text-foreground hover:bg-muted min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors cursor-pointer"
+              className="p-2.5 rounded-xl border border-border bg-card text-foreground hover:bg-muted min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors cursor-pointer"
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -377,7 +374,7 @@ export const ResizableNavbar = () => {
               transition={{ duration: 0.25, ease: "easeInOut" }}
               className="w-full overflow-hidden"
             >
-              <div className="flex flex-col gap-1 pt-4 pb-2 px-1 border-t border-border/50 mt-3">
+              <div className="flex flex-col gap-1 pt-4 pb-2 px-1 border-t border-border mt-3">
                 {NAV_ITEMS.map((item) => {
                   const isActive = pathname === item.href;
                   const hasSub = !!item.subItems && item.subItems.length > 0;
@@ -392,7 +389,7 @@ export const ResizableNavbar = () => {
                             className={cn(
                               "flex-1 px-4 py-3 text-base font-bold rounded-xl min-h-[44px] flex items-center transition-colors",
                               isActive
-                                ? "text-[#4866FA]"
+                                ? "text-primary"
                                 : "text-foreground hover:bg-muted"
                             )}
                           >
@@ -407,7 +404,7 @@ export const ResizableNavbar = () => {
                             <ChevronDown
                               className={cn(
                                 "w-5 h-5 transition-transform duration-200",
-                                activitiesExpanded ? "rotate-180 text-[#4866FA]" : ""
+                                activitiesExpanded ? "rotate-180 text-primary" : ""
                               )}
                             />
                           </button>
@@ -420,7 +417,7 @@ export const ResizableNavbar = () => {
                               initial={{ opacity: 0, height: 0 }}
                               animate={{ opacity: 1, height: "auto" }}
                               exit={{ opacity: 0, height: 0 }}
-                              className="pl-4 flex flex-col gap-1 border-l-2 border-[#4866FA]/30 ml-4 my-1"
+                              className="pl-4 flex flex-col gap-1 border-l-2 border-primary/30 ml-4 my-1"
                             >
                               {item.subItems!.map((sub) => {
                                 const isSubActive = pathname === sub.href;
@@ -432,8 +429,8 @@ export const ResizableNavbar = () => {
                                     className={cn(
                                       "px-4 py-2.5 text-sm font-semibold rounded-lg min-h-[44px] flex items-center transition-colors",
                                       isSubActive
-                                        ? "bg-[#4866FA] text-white"
-                                        : "text-foreground/80 hover:bg-muted hover:text-[#4866FA]"
+                                        ? "bg-primary text-primary-foreground font-bold"
+                                        : "text-muted-foreground hover:bg-muted hover:text-primary"
                                     )}
                                   >
                                     {sub.name}
@@ -455,7 +452,7 @@ export const ResizableNavbar = () => {
                       className={cn(
                         "px-4 py-3 text-base font-bold rounded-xl min-h-[44px] flex items-center transition-colors",
                         isActive
-                          ? "bg-[#4866FA] text-white"
+                          ? "bg-primary text-primary-foreground"
                           : "text-foreground hover:bg-muted"
                       )}
                     >
@@ -464,7 +461,7 @@ export const ResizableNavbar = () => {
                   );
                 })}
 
-                <div className="pt-3 mt-2 border-t border-border/50 flex flex-col gap-2">
+                <div className="pt-3 mt-2 border-t border-border flex flex-col gap-2">
                   <NavbarButton href="/contact" className="w-full text-center justify-center">
                     Join Us
                   </NavbarButton>

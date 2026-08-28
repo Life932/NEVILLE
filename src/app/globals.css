@@ -77,8 +77,8 @@
 }
 
 ::selection {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
+  background-color: var(--accent);
+  color: var(--accent-foreground);
 }
 
 /* =========================================================================

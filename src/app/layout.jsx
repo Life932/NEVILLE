@@ -15,10 +15,10 @@ export default function RootLayout({ children }) {
       <body className="font-sans antialiased flex flex-col min-h-screen relative">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ClickSpark
-            sparkColor="#4866FA"
+            sparkColor="#de6583"
             sparkSize={10}
             sparkRadius={18}
-            sparkCount={6}
+            sparkCount={8}
             duration={350}
             easing="ease-out"
           >

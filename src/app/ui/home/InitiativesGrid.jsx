@@ -2,13 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 /* ============================================================================
-   DEV NOTE: DATA LAYER & STATE MANAGEMENT
-   ----------------------------------------------------------------------------
-   1. Dynamic Data: This array should eventually be fetched from your database 
-      (e.g., Prisma + PostgreSQL or Sanity CMS).
-   2. Number Formatting: Always store financial data as raw numbers (integers), 
-      and format them in the UI. This prevents math errors on the backend.
-============================================================================ */
+   NEVILLE INITIATIVES GRID — SEMANTIC DESIGN SYSTEM
+   ============================================================================ */
 const INITIATIVES = [
   {
     id: "clean-water",
@@ -17,7 +12,7 @@ const INITIATIVES = [
     goal: 120000,
     raised: 60000,
     donations: 14,
-    image: 1, // Using numbers for placehold.co logic below
+    image: 1,
   },
   {
     id: "improve-education",
@@ -68,115 +63,83 @@ const INITIATIVES = [
 
 export default function InitiativesGrid() {
   return (
-    // DEV NOTE: 'bg-base-100' (white) alternates perfectly with the 'bg-base-200'
-    // from the previous section to create clean visual striping on the page.
-    <section className="py-16 md:py-24 bg-base-100">
+    <section className="py-16 md:py-24 bg-background text-foreground transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 md:px-12 lg:px-20">
-        {/* ========================================= */}
-        {/* SECTION HEADER                            */}
-        {/* ========================================= */}
-        {/* 
-          DEV NOTE (Mobile Layout): 
-          Used `flex-col md:flex-row`. On mobile, the title and button stack perfectly 
-          and align to the left. On desktop, they spread to opposite sides.
-        */}
+        {/* SECTION HEADER */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 md:mb-16 gap-6">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-neutral tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-foreground tracking-tight">
             Latest Causes
           </h2>
 
           <Link
             href="/initiatives"
-            className="btn btn-outline border-neutral text-neutral hover:bg-neutral hover:text-white rounded-full px-8 uppercase tracking-widest text-xs font-bold transition-all"
+            className="border border-border text-foreground hover:bg-muted hover:border-primary px-8 py-3 rounded-full uppercase tracking-widest text-xs font-bold transition-all"
           >
             More Causes
           </Link>
         </div>
 
-        {/* ========================================= */}
-        {/* GRID LAYOUT                               */}
-        {/* ========================================= */}
-        {/* 
-          DEV NOTE (Responsiveness): 
-          - Mobile: 1 column
-          - Tablet (md): 2 columns
-          - Desktop (lg): 3 columns
-        */}
+        {/* GRID LAYOUT */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {INITIATIVES.map((cause) => {
-            // DEV NOTE: Calculate percentage for the progress bar
             const progressPercent = Math.min(
               (cause.raised / cause.goal) * 100,
-              100,
+              100
             );
 
             return (
-              /* 
-                DEV NOTE: THE "NEVILLE" CARD DESIGN
-                We use `rounded-[2rem]` for that soft, modern app feel.
-                `group` allows us to animate the image when the card is hovered.
-              */
               <div
                 key={cause.id}
-                className="bg-white border border-neutral/5 rounded-[2rem] shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col group hover:-translate-y-1"
+                className="bg-card text-card-foreground border border-border rounded-2xl md:rounded-[2rem] shadow-neo-sm hover:shadow-neo-md transition-all duration-300 overflow-hidden flex flex-col group hover:-translate-y-1"
               >
                 {/* IMAGE CONTAINER */}
-                <div className="relative w-full h-60 overflow-hidden bg-neutral/10">
+                <div className="relative w-full h-60 overflow-hidden bg-muted">
                   <Image
-                    // DEV NOTE: Safe placeholder logic. Replace with real images later!
                     src={`https://placehold.co/600x400/333333/666666?text=Cause+${cause.image}`}
                     alt={cause.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  {/* DEV NOTE: Subtle inner shadow to make the image blend into the white card seamlessly */}
-                  <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-t-[2rem]"></div>
+                  <div className="absolute inset-0 ring-1 ring-inset ring-border/20 rounded-t-2xl md:rounded-t-[2rem]"></div>
                 </div>
 
                 {/* CARD CONTENT */}
                 <div className="p-6 md:p-8 flex flex-col flex-grow">
                   {/* Title & Description */}
                   <div className="mb-8 flex-grow">
-                    <h3 className="text-xl font-bold text-neutral mb-3 line-clamp-1">
+                    <h3 className="text-xl font-bold text-foreground mb-3 line-clamp-1 group-hover:text-primary transition-colors">
                       {cause.title}
                     </h3>
-                    {/* DEV NOTE: `line-clamp-3` forces descriptions to be exactly 3 lines long, 
-                        ensuring all cards are exactly the same height! */}
-                    <p className="text-sm text-neutral/70 leading-relaxed line-clamp-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
                       {cause.desc}
                     </p>
                   </div>
 
                   {/* PROGRESS BAR & STATS */}
                   <div className="mb-8">
-                    {/* 
-                      DEV NOTE (DaisyUI): We use the native `<progress>` element. 
-                      `progress-primary` colors it with your Trust Blue theme color.
-                    */}
-                    <progress
-                      className="progress progress-primary w-full h-2.5 bg-neutral/10"
-                      value={cause.raised}
-                      max={cause.goal}
-                      aria-label={`${progressPercent}% of goal raised`}
-                    ></progress>
+                    <div className="w-full bg-muted rounded-full h-2.5 overflow-hidden">
+                      <div
+                        className="bg-primary h-2.5 rounded-full transition-all duration-500"
+                        style={{ width: `${progressPercent}%` }}
+                      />
+                    </div>
 
                     <div className="flex justify-between items-end mt-4">
                       <div className="space-y-1">
-                        {/* DEV NOTE: .toLocaleString() automatically adds commas (e.g., 120,000) */}
-                        <p className="text-xs font-extrabold text-neutral tracking-wide">
+                        <p className="text-xs font-extrabold text-foreground tracking-wide">
                           Goal: ৳{cause.goal.toLocaleString()}
                         </p>
-                        <p className="text-xs font-semibold text-neutral/60">
+                        <p className="text-xs font-semibold text-muted-foreground">
                           Raised: ৳{cause.raised.toLocaleString()}
                         </p>
                       </div>
 
                       <div className="text-right space-y-1">
-                        <p className="text-xs font-extrabold text-neutral">
+                        <p className="text-xs font-extrabold text-foreground">
                           {cause.donations.toLocaleString()}
                         </p>
-                        <p className="text-[10px] font-semibold text-neutral/50 uppercase tracking-widest">
+                        <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-widest">
                           donations
                         </p>
                       </div>
@@ -184,13 +147,9 @@ export default function InitiativesGrid() {
                   </div>
 
                   {/* ACTION BUTTON */}
-                  {/* 
-                    DEV NOTE: In Figma, this was pitch black. We use `bg-neutral` (Deep Navy) 
-                    so it fits the theme, but hovers into your `primary` (Trust Blue) color!
-                  */}
                   <Link
                     href={`/initiatives/${cause.id}`}
-                    className="btn bg-neutral text-white hover:bg-primary border-none w-full rounded-full shadow-md hover:shadow-primary/30 transition-all duration-300"
+                    className="bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-full text-center hover:opacity-90 active:scale-95 shadow-neo-sm transition-all duration-200"
                   >
                     View Details
                   </Link>
