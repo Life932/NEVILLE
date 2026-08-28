@@ -94,7 +94,7 @@ export default function Footer() {
         </div>
 
         {/* COLUMN 2: Join Us (Mapped) */}
-        <div className="flex flex-col gap-4 invisible">
+        <div className="flex flex-col gap-4">
           <h6 className="font-bold text-white uppercase tracking-wider text-xs">
             Join Our Mission
           </h6>
@@ -114,7 +114,7 @@ export default function Footer() {
         </div>
 
         {/* COLUMN 3: Useful Links (Mapped) */}
-        <div className="flex flex-col gap-4 invisible">
+        <div className="flex flex-col gap-4">
           <h6 className="font-bold text-white uppercase tracking-wider text-xs">
             Information
           </h6>
