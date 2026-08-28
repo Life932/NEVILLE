@@ -1,15 +1,8 @@
 import "./globals.css";
-import Navbar from "./ui/Navbar";
 import Footer from "./ui/Footer";
-import FloatingNav from "./ui/FloatingNav";
-// Inter Font for Charity Organization Website
-import { Inter } from "next/font/google";
-
-// Font Configuration for Inter Font
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
+import ResizableNavbar from "@/components/ui/resizable-navbar";
+import { ThemeProvider } from "@/components/theme-provider";
+import ClickSpark from "@/components/ui/ClickSpark";
 
 export const metadata = {
   title: "Neville Youth Initiative",
@@ -18,16 +11,24 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="neville">
-      {/* 3. Applying the Font */}
-      <body
-        className={`${inter.className} antialiased flex flex-col min-h-screen`}
-      >
-        <FloatingNav />
+    <html lang="en" suppressHydrationWarning>
+      <body className="font-sans antialiased flex flex-col min-h-screen relative">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ClickSpark
+            sparkColor="#de6583"
+            sparkSize={10}
+            sparkRadius={18}
+            sparkCount={8}
+            duration={350}
+            easing="ease-out"
+          >
+          <ResizableNavbar />
 
-        <main className="grow">{children}</main>
+            <main className="grow">{children}</main>
 
-        <Footer />
+          <Footer />
+          </ClickSpark>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -44,9 +44,9 @@ export default function AboutPage() {
         global Footer remains pinned to the bottom on short pages.
       - `overflow-hidden`: Acts as a safety net against horizontal scrolling 
         caused by wide animations (e.g., Framer Motion slide-ins).
-      - `bg-base-100`: Inherits the primary background from the global theme.
+      - `bg-background`: Inherits the primary background from the global theme.
     */
-    <main className="min-h-screen bg-base-100 flex flex-col w-full overflow-hidden">
+    <main className="min-h-screen bg-background text-foreground flex flex-col w-full overflow-hidden">
       {/* 
         =======================================================================
         FUTURE COMPONENT ROADMAP (PHASE 2)

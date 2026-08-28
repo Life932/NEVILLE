@@ -9,13 +9,6 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 
-/**
- * DEV NOTE: DATA STRUCTURES
- * -------------------------
- * We store links in arrays so that future updates only require editing
- * these constants, rather than hunting through JSX tags.
- */
-
 const JOIN_LINKS = [
   { name: "Donate Now", href: "/donate" },
   { name: "Volunteers", href: "/about#volunteers" },
@@ -40,62 +33,61 @@ const INITIATIVES = [
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral text-neutral-content p-10 md:px-20 border-t border-white/5">
+    <footer className="bg-card text-card-foreground border-t border-border p-10 md:px-20 transition-colors duration-300">
       {/* MAIN CONTENT AREA */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
         {/* COLUMN 1: Charity Info */}
         <div className="flex flex-col gap-6">
           <Link
             href="/"
-            className="inline-block hover:opacity-80 transition-opacity"
+            className="inline-block hover:opacity-90 transition-opacity"
           >
             <Image
               src="/logo.png"
               alt="NEVILLE Logo"
               width={200}
               height={100}
-              className="w-24 h-auto object-contain"
+              className="w-24 h-auto object-contain brightness-0 dark:brightness-100 opacity-85 dark:opacity-100 transition-all"
               priority
             />
           </Link>
-          <p className="text-sm opacity-80 leading-relaxed max-w-xs">
+          <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
             NEVILLE is a youth-led non-profit organization from Dhaka,
             Bangladesh, dedicated to building community-centered systems of
             support, skill development, and service.
           </p>
 
           <div className="space-y-3 text-sm">
-            {/* DEV NOTE: Using flex items-center for better icon/text alignment */}
             <a
               href="tel:+8801764078003"
-              className="flex items-center gap-3 hover:text-primary transition-colors group"
+              className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
             >
               <PhoneCall className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
-              <span className="opacity-90 underline-offset-4 group-hover:underline">
+              <span className="underline-offset-4 group-hover:underline">
                 +8801764078003
               </span>
             </a>
 
             <a
               href="mailto:org.neville@gmail.com"
-              className="flex items-center gap-3 hover:text-primary transition-colors group"
+              className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
             >
               <Mail className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
-              <span className="opacity-90 underline-offset-4 group-hover:underline">
+              <span className="underline-offset-4 group-hover:underline">
                 org.neville@gmail.com
               </span>
             </a>
 
-            <div className="flex items-start gap-3">
+            <div className="flex items-start gap-3 text-muted-foreground">
               <MapPinned className="w-4 h-4 text-primary mt-1" />
-              <span className="opacity-90">Dhaka, Bangladesh</span>
+              <span>Dhaka, Bangladesh</span>
             </div>
           </div>
         </div>
 
-        {/* COLUMN 2: Join Us (Mapped) */}
-        <div className="flex flex-col gap-4 invisible">
-          <h6 className="font-bold text-white uppercase tracking-wider text-xs">
+        {/* COLUMN 2: Join Us */}
+        <div className="flex flex-col gap-4">
+          <h6 className="font-bold text-foreground uppercase tracking-wider text-xs">
             Join Our Mission
           </h6>
           <ul className="flex flex-col gap-3">
@@ -103,7 +95,7 @@ export default function Footer() {
               <li key={link.name}>
                 <Link
                   href={link.href}
-                  className="text-sm opacity-80 hover:opacity-100 hover:text-primary flex items-center gap-1 transition-all group"
+                  className="text-sm text-muted-foreground hover:text-primary flex items-center gap-1 transition-all group"
                 >
                   {link.name}
                   <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -113,9 +105,9 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* COLUMN 3: Useful Links (Mapped) */}
-        <div className="flex flex-col gap-4 invisible">
-          <h6 className="font-bold text-white uppercase tracking-wider text-xs">
+        {/* COLUMN 3: Useful Links */}
+        <div className="flex flex-col gap-4">
+          <h6 className="font-bold text-foreground uppercase tracking-wider text-xs">
             Information
           </h6>
           <ul className="flex flex-col gap-3">
@@ -123,7 +115,7 @@ export default function Footer() {
               <li key={link.name}>
                 <Link
                   href={link.href}
-                  className="text-sm opacity-80 hover:opacity-100 hover:text-primary transition-all"
+                  className="text-sm text-muted-foreground hover:text-primary transition-all"
                 >
                   {link.name}
                 </Link>
@@ -135,7 +127,7 @@ export default function Footer() {
         {/* COLUMN 4: Key Initiatives & Gallery */}
         <div className="flex flex-col gap-6">
           <div>
-            <h6 className="font-bold text-white uppercase tracking-wider text-xs mb-4">
+            <h6 className="font-bold text-foreground uppercase tracking-wider text-xs mb-4">
               Our Focus
             </h6>
             <ul className="flex flex-col gap-3">
@@ -143,7 +135,7 @@ export default function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-sm opacity-80 hover:opacity-100 hover:text-primary transition-all font-medium"
+                    className="text-sm text-muted-foreground hover:text-primary transition-all font-medium"
                   >
                     # {item.name}
                   </Link>
@@ -152,14 +144,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* MINI GALLERY: Finishing Touch */}
-          {/* DEV NOTE: For the static version, these images serve as visual anchors. 
-              In the future, these can be pulled from an Instagram Feed API. */}
+          {/* MINI GALLERY */}
           <div className="grid grid-cols-3 gap-2 w-full max-w-50">
             {[1, 2, 3].map((i) => (
               <div
                 key={i}
-                className="aspect-square bg-white/5 rounded-md overflow-hidden relative group border border-white/10"
+                className="aspect-square bg-muted rounded-md overflow-hidden relative group border border-border"
               >
                 <Image
                   src={`/initiative-${i}.jpg`}
@@ -175,34 +165,33 @@ export default function Footer() {
       </div>
 
       {/* BOTTOM SECTION: Socials & Copyright */}
-      <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="flex gap-5">
-          {/* DEV NOTE: Standardized external links with security attributes */}
+      <div className="max-w-7xl mx-auto border-t border-border mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="flex gap-4">
           <a
             href="https://www.facebook.com/profile.php?id=61584161175379"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-            className="p-2 bg-white/5 rounded-full hover:bg-primary hover:text-white transition-all duration-300"
+            className="p-2.5 bg-background border border-border rounded-xl text-foreground hover:border-primary hover:text-primary transition-all duration-200"
           >
-            <Facebook className="w-5 h-5" />
+            <Facebook className="w-4 h-4" />
           </a>
           <a
             href="https://www.instagram.com/org.neville/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="p-2 bg-white/5 rounded-full hover:bg-primary hover:text-white transition-all duration-300"
+            className="p-2.5 bg-background border border-border rounded-xl text-foreground hover:border-primary hover:text-primary transition-all duration-200"
           >
-            <Instagram className="w-5 h-5" />
+            <Instagram className="w-4 h-4" />
           </a>
         </div>
 
         <div className="text-center md:text-right">
-          <p className="text-xs opacity-70">
+          <p className="text-xs text-muted-foreground font-medium">
             © {new Date().getFullYear()} NEVILLE. All rights reserved.
           </p>
-          <p className="text-[10px] mt-1 opacity-70 uppercase tracking-tighter">
+          <p className="text-[10px] mt-1 text-muted-foreground/80 uppercase tracking-wider">
             Empowering youth • Serving communities • Dhaka, Bangladesh
           </p>
         </div>

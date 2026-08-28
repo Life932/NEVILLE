@@ -21,9 +21,7 @@ import { Menu, X } from "lucide-react";
 const NAV_LINKS = [
   { name: "Home", href: "/", color: "#4866FA" },
   { name: "About", href: "/about", color: "#99BCF2" },
-  { name: "Olympiads", href: "/olympiads", color: "#4866FA" },
-  { name: "Initiatives", href: "/initiatives", color: "#99BCF2" },
-  { name: "Journal", href: "/journal", color: "#4866FA" },
+  { name: "Activities", href: "/activities", color: "#4866FA" },
   { name: "Gallery", href: "/gallery", color: "#99BCF2" },
   { name: "Ledger", href: "/ledger", color: "#4866FA" },
   { name: "Contact", href: "/contact", color: "#99BCF2" },
@@ -54,7 +52,7 @@ export default function FloatingNav() {
       {/* ================================================================== */}
       {/* 1. DESKTOP FLOATING GLASS NAV (Top Center)                         */}
       {/* ================================================================== */}
-      <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-[90] hidden lg:block">
+      <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-90 hidden lg:block">
         {/* 
           DEV NOTE: SIZE INCREASE FIX
           Increased padding from p-1 to p-1.5 and gap to gap-1 to restore 
@@ -80,7 +78,7 @@ export default function FloatingNav() {
       {/* ================================================================== */}
       {/* 2. MOBILE BOTTOM NAVIGATION (Stacked Bubbles)                      */}
       {/* ================================================================== */}
-      <div className="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] flex flex-col items-center">
+      <div className="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-100 flex flex-col items-center">
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div

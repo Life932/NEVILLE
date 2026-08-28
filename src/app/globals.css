@@ -1,77 +1,112 @@
 @import "tailwindcss";
-@plugin "daisyui";
 
-@plugin "daisyui/theme" {
-  name: "neville";
-  default: true;
-  prefersdark: false;
-  color-scheme: "light";
+@custom-variant dark (&:where(.dark, .dark *));
 
-  /* ========================================= */
-  /* NEVILLE BRAND PALETTE                     */
-  /* ========================================= */
+@layer base {
+  /* =========================================================================
+     LIGHT THEME: Warm Cream + Editorial Royal Ink + Mulberry Berry
+     ========================================================================= */
+  :root {
+    --background: #faf7f2;          /* Warm Cream Canvas */
+    --foreground: #2b2623;          /* Deep Warm Charcoal Text */
+    
+    --primary: #1b4580;             /* Editorial Royal Ink Blue */
+    --primary-foreground: #faf7f2;
+    
+    --secondary: #b83b5e;           /* Rich Mulberry Berry Pink */
+    --secondary-foreground: #faf7f2;
+    
+    --accent: #b83b5e;              /* Berry Pink for tags, dates & badges */
+    --accent-foreground: #faf7f2;
+    
+    --muted: #f4efe7;              /* Soft Parchment Card Surface */
+    --muted-foreground: #786f66;    /* Warm taupe secondary text */
+    
+    --border: #e3dbce;              /* Soft clay hairline border */
+    --radius: 0.875rem;             /* 14px Organic rounded radius */
+  }
 
-  /* Primary: Royal Blue (Action, Trust, Core Brand) */
-  --color-primary: #4866fa;
-  --color-primary-content: #ffffff;
-
-  /* Secondary: Light Blue (Hover states, subtle highlights) */
-  --color-secondary: #99bcf2;
-  --color-secondary-content: #36454f; /* Dark text for contrast */
-
-  /* Neutral: Charcoal (Heavy UI blocks, Black Pills, Footers) */
-  --color-neutral: #36454f;
-  --color-neutral-content: #ffffff;
-
-  /* Accent: Mapped to Charcoal for dark highlights */
-  --color-accent: #36454f;
-  --color-accent-content: #ffffff;
-
-  /* ========================================= */
-  /* BASE CANVAS & TYPOGRAPHY                  */
-  /* ========================================= */
-
-  --color-base-100: #ffffff; /* Pure white canvas */
-  --color-base-200: #f4f7f9; /* Subtle off-white for section striping */
-  --color-base-300: #e2e8f0;
-  /* Charcoal text (Softer on the eyes than pure black) */
-  --color-base-content: #36454f;
-
-  /* ========================================= */
-  /* SYSTEM STATUS COLORS (Modernized)         */
-  /* ========================================= */
-
-  /* Info matches your Light Blue theme */
-  --color-info: #99bcf2;
-  --color-info-content: #36454f;
-
-  /* Crisp, tech-friendly Success Green */
-  --color-success: #10b981;
-  --color-success-content: #ffffff;
-
-  /* Clean Amber Warning */
-  --color-warning: #f59e0b;
-  --color-warning-content: #ffffff;
-
-  /* Sharp, urgent Error Red */
-  --color-error: #ef4444;
-  --color-error-content: #ffffff;
-
-  /* ========================================= */
-  /* BRUTALIST/AGENCY BORDERS                  */
-  /* ========================================= */
-  --radius-selector: 0rem;
-  --radius-field: 0rem;
-  --radius-box: 0rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 1px;
-  --depth: 1;
-  --noise: 0;
+  /* =========================================================================
+     DARK THEME: Warm Espresso Charcoal + Luminous Royal + Soft Mulberry
+     ========================================================================= */
+  .dark {
+    --background: #1c1917;          /* Warm Espresso Charcoal Canvas */
+    --foreground: #f2ece4;          /* Soft Parchment Cream Text */
+    
+    --primary: #5b8cd6;             /* Luminous Royal Sky Blue */
+    --primary-foreground: #1c1917;
+    
+    --secondary: #de6583;           /* Soft Mulberry Berry Rose */
+    --secondary-foreground: #1c1917;
+    
+    --accent: #de6583;              /* Mulberry Accent for highlights & badges */
+    --accent-foreground: #1c1917;
+    
+    --muted: #26221f;              /* Elevated Warm Walnut Slate Surface */
+    --muted-foreground: #a3988c;    /* Warm stone muted text */
+    
+    --border: #38322c;              /* Warm dark divider */
+  }
 }
 
-/* Elite selection highlighting mapped to your Royal Blue */
+@theme inline {
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--muted);
+  --color-card-foreground: var(--foreground);
+  --color-popover: var(--muted);
+  --color-popover-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: #c44d4d;
+  --color-destructive-foreground: #faf7f2;
+  --color-border: var(--border);
+  --color-input: var(--border);
+  --color-ring: var(--primary);
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+}
+
 ::selection {
-  background-color: #4866fa;
-  color: #ffffff;
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+/* =========================================================================
+   NEO-MINIMALIST WARM TEXTURE & WARM SHADOW UTILITIES
+   ========================================================================= */
+
+/* Warm-tinted shadows (No cold, harsh pure black shadows) */
+.shadow-neo-sm {
+  box-shadow: 0 1px 3px rgba(43, 38, 35, 0.04);
+}
+.shadow-neo-md {
+  box-shadow: 0 2px 8px rgba(43, 38, 35, 0.06);
+}
+.shadow-neo-lg {
+  box-shadow: 0 4px 16px rgba(43, 38, 35, 0.08);
+}
+
+/* Optional Paper / Linen Grain Texture Overlay */
+.neo-paper-texture {
+  position: relative;
+}
+.neo-paper-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Crect width='1' height='1' x='0' y='1' fill='%23786F66' opacity='0.4'/%3E%3Crect width='1' height='1' x='3' y='4' fill='%23786F66' opacity='0.3'/%3E%3Crect width='1' height='1' x='6' y='0' fill='%23786F66' opacity='0.35'/%3E%3Crect width='1' height='1' x='1' y='6' fill='%23786F66' opacity='0.25'/%3E%3Crect width='1' height='1' x='5' y='7' fill='%23786F66' opacity='0.3'/%3E%3C/svg%3E");
+  background-size: 8px 8px;
+  pointer-events: none;
+  border-radius: inherit;
 }
