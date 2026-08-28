@@ -46,10 +46,10 @@ export default function Hero2() {
 
           {/* HEADLINE */}
           <h1 className="mb-3 text-[2rem] leading-[1.05] font-extrabold tracking-tight text-balance text-white drop-shadow-2xl sm:text-[2.75rem] sm:mb-4 md:mb-6 md:text-6xl lg:text-7xl">
-            Empowering youth,
+            Reforming society,
             <br />
             <span className="relative inline-block text-secondary">
-              building leaders
+              making an impact.
               {/* Hand-stitched underline flourish */}
               <svg
                 viewBox="0 0 150 12"

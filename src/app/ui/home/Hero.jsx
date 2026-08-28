@@ -146,7 +146,7 @@ export default function Hero() {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.6, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        className="z-20 mt-auto h-10 w-full min-h-10 rounded-t-2xl bg-muted/70 border-t border-border shadow-neo-sm md:h-[16vh] md:min-h-16 md:rounded-t-[2.5rem] lg:rounded-t-[3rem]"
+        className="z-20 mt-auto h-10 w-full min-h-10 bg-muted/70 border-t border-border shadow-neo-sm"
       >
         <div className="flex h-full items-center">
           <ImpactTicker />
