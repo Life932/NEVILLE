@@ -101,7 +101,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.6 }}
-          className="mb-3 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3 md:mb-4"
+          className="my-2 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3 md:mb-4"
         >
           <span className="text-[11px] font-bold tracking-[0.2em] text-accent uppercase md:text-xs">
             Dhaka &middot; Youth-Led Ecosystem
@@ -110,7 +110,7 @@ export default function Hero() {
             href="https://forms.gle/j11RnDdtBDZ8PyZq5"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-5 py-2 rounded-full text-xs font-semibold bg-primary text-primary-foreground hover:opacity-90 active:scale-95 transition-all shadow-sm md:text-sm md:px-6 md:py-2.5 cursor-pointer"
+            className="inline-flex items-center justify-center px-5 py-2 my-2 rounded-full text-xs font-semibold bg-primary text-primary-foreground hover:opacity-90 active:scale-95 transition-all shadow-sm md:text-sm md:px-6 md:py-2.5 cursor-pointer"
           >
             Join the movement &rarr;
           </a>
@@ -121,13 +121,13 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.6 }}
-          className="mb-6 max-w-md text-sm leading-snug text-muted-foreground md:mb-8 md:text-base font-medium"
+          className="mt-2 max-w-md text-sm leading-snug text-muted-foreground md:mb-8 md:text-base font-medium"
         >
           We replace one-off charity with systemic support, real data, and
           peer-to-peer mentorship.
         </motion.p>
 
-        <h1 className="max-w-[100rem]">
+        <h1 className="max-w-[100rem] pt-14 pb-2">
           <AnimatedLine
             text="Empowering Youth,"
             className="text-[clamp(1.75rem,8.5vw,7.5rem)] leading-[1.05] font-extrabold tracking-tight text-foreground"
