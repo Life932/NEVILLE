@@ -29,7 +29,7 @@ export default function ThemeToggle() {
       title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
     >
       {isDark ? (
-        <Moon className="w-5 h-5 text-accent transition-transform duration-300 rotate-0 scale-100" />
+        <Moon className="w-5 h-5 text-primary transition-transform duration-300 rotate-0 scale-100" />
       ) : (
         <Sun className="w-5 h-5 text-amber-500 transition-transform duration-300 rotate-0 scale-100" />
       )}
