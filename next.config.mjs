@@ -8,7 +8,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "placehold.co",
+        hostname: "placehold.co"
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com"
       },
       // DEV NOTE: When you eventually use Sanity CMS or AWS for real images,
       // you will just add another object here like:

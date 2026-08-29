@@ -1,4 +1,5 @@
 import TeamSection from "../ui/about/TeamSection";
+import { AboutTeamSection } from "@/components/about/AboutTeamSection";
 
 /* ============================================================================
    DEV NOTE: SEO & SOCIAL SHARING (METADATA)
@@ -73,6 +74,7 @@ export default function AboutPage() {
         =======================================================================
       */}
       <TeamSection />
+      <AboutTeamSection />
     </main>
   );
 }
