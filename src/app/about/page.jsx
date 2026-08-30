@@ -1,5 +1,6 @@
 import TeamSection from "../ui/about/TeamSection";
 import { AboutTeamSection } from "@/components/about/AboutTeamSection";
+import { AboutHero } from "@/components/about/about-hero";
 
 /* ============================================================================
    DEV NOTE: SEO & SOCIAL SHARING (METADATA)
@@ -16,7 +17,7 @@ import { AboutTeamSection } from "@/components/about/AboutTeamSection";
        title: "About NEVILLE",
        description: "Meet the minds behind Dhaka's premier youth initiative.",
        url: "https://neville.org.bd/about",
-       images:[{ url: "/og-team-image.jpg", width: 1200, height: 630 }],
+       images: [{ url: "/og-team-image.jpg", width: 1200, height: 630 }],
      }
 ============================================================================ */
 export const metadata = {
@@ -48,25 +49,8 @@ export default function AboutPage() {
       - `bg-background`: Inherits the primary background from the global theme.
     */
     <main className="min-h-screen bg-background text-foreground flex flex-col w-full overflow-hidden">
-      {/* 
-        =======================================================================
-        FUTURE COMPONENT ROADMAP (PHASE 2)
-        =======================================================================
-        To establish authority as a modern "Youth Organization" rather than a 
-        standard charity, the page hierarchy requires mission context prior 
-        to the organizational chart.
-        
-        Planned structural injections:
-        
-        {/* 1. The Executive Summary / Manifesto */}
-      {/* <AboutHero /> */}
-
-      {/* 2. The Core Methodology (Mentorship, Research, Action) */}
-      {/* <MissionVisionGrid /> */}
-
-      {/* 3. The "Radical Transparency" Module */}
-      {/* <OpenLedgerDashboard /> */}
-      {/* ======================================================================= */}
+      {/* 1. The Executive Summary / Manifesto */}
+      <AboutHero />
 
       {/* 
         =======================================================================
