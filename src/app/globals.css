@@ -13,7 +13,7 @@
     --primary: #1a4fb4;             /* High-Energy Editorial Royal Blue */
     --primary-foreground: #ffffff;
     
-    --secondary: #edf3fa;           /* Ice White with bluish tint to supplement Royal Blue */
+    --secondary: #ffffff;           /* Ice White with bluish tint to supplement Royal Blue */
     --secondary-foreground: #1a4fb4;/* Royal Blue text on Icy White surfaces */
     
     --accent: #059669;              /* Energetic Bright Emerald/Leaf Green */
@@ -77,8 +77,8 @@
 }
 
 ::selection {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
+  background-color: var(--accent);
+  color: var(--accent-foreground);
 }
 
 /* =========================================================================
