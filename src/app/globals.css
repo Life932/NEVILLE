@@ -4,48 +4,48 @@
 
 @layer base {
   /* =========================================================================
-     LIGHT THEME: Warm Cream + Editorial Royal Ink + Mulberry Berry
+     LIGHT THEME: Warm Yellow Off-White + Royal Blue + Bright Earth Green + Icy White
      ========================================================================= */
   :root {
-    --background: #faf7f2;          /* Warm Cream Canvas */
-    --foreground: #2b2623;          /* Deep Warm Charcoal Text */
+    --background: #faf7ee;          /* Off-white with warm yellow/cream undertone */
+    --foreground: #19202c;          /* Deep Slate Ink */
     
-    --primary: #1b4580;             /* Editorial Royal Ink Blue */
-    --primary-foreground: #faf7f2;
+    --primary: #1a4fb4;             /* High-Energy Editorial Royal Blue */
+    --primary-foreground: #ffffff;
     
-    --secondary: #b83b5e;           /* Rich Mulberry Berry Pink */
-    --secondary-foreground: #faf7f2;
+    --secondary: #edf3fa;           /* Ice White with bluish tint to supplement Royal Blue */
+    --secondary-foreground: #1a4fb4;/* Royal Blue text on Icy White surfaces */
     
-    --accent: #b83b5e;              /* Berry Pink for tags, dates & badges */
-    --accent-foreground: #faf7f2;
+    --accent: #059669;              /* Energetic Bright Emerald/Leaf Green */
+    --accent-foreground: #ffffff;
     
-    --muted: #f4efe7;              /* Soft Parchment Card Surface */
-    --muted-foreground: #786f66;    /* Warm taupe secondary text */
+    --muted: #f1ebd8;              /* Soft Warm Parchment Surface */
+    --muted-foreground: #656d78;    /* Warm slate secondary text */
     
-    --border: #e3dbce;              /* Soft clay hairline border */
+    --border: #e3dbc5;              /* Warm linen hairline border */
     --radius: 0.875rem;             /* 14px Organic rounded radius */
   }
 
   /* =========================================================================
-     DARK THEME: Warm Espresso Charcoal + Luminous Royal + Soft Mulberry
+     DARK THEME: Icy Blue Off-Black + Luminous Royal Blue + Mint Green + Frosted Slate
      ========================================================================= */
   .dark {
-    --background: #1c1917;          /* Warm Espresso Charcoal Canvas */
-    --foreground: #f2ece4;          /* Soft Parchment Cream Text */
+    --background: #060913;          /* Off-black with deep icy blue undertone */
+    --foreground: #f0f4fa;          /* Crisp Ice White text */
     
-    --primary: #5b8cd6;             /* Luminous Royal Sky Blue */
-    --primary-foreground: #1c1917;
+    --primary: #3b82f6;             /* Luminous Electric Royal Blue */
+    --primary-foreground: #060913;
     
-    --secondary: #de6583;           /* Soft Mulberry Berry Rose */
-    --secondary-foreground: #1c1917;
+    --secondary: #121c2e;           /* Elevated Deep Ice-Navy Surface */
+    --secondary-foreground: #e0ecfc;/* Frosted Ice Blue secondary text */
     
-    --accent: #de6583;              /* Mulberry Accent for highlights & badges */
-    --accent-foreground: #1c1917;
+    --accent: #10b981;              /* Luminous Bright Mint / Earth Green */
+    --accent-foreground: #060913;
     
-    --muted: #26221f;              /* Elevated Warm Walnut Slate Surface */
-    --muted-foreground: #a3988c;    /* Warm stone muted text */
+    --muted: #0d1524;              /* Deep Icy Slate Surface */
+    --muted-foreground: #8a9bb0;    /* Icy blue-gray muted text */
     
-    --border: #38322c;              /* Warm dark divider */
+    --border: #1a273e;              /* Icy Navy Divider */
   }
 }
 
@@ -65,8 +65,8 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: #c44d4d;
-  --color-destructive-foreground: #faf7f2;
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #ffffff;
   --color-border: var(--border);
   --color-input: var(--border);
   --color-ring: var(--primary);
@@ -77,26 +77,26 @@
 }
 
 ::selection {
-  background-color: var(--accent);
-  color: var(--accent-foreground);
+  background-color: var(--primary);
+  color: var(--primary-foreground);
 }
 
 /* =========================================================================
-   NEO-MINIMALIST WARM TEXTURE & WARM SHADOW UTILITIES
+   HIGH-ENERGY ACCENT & SHADOW UTILITIES
    ========================================================================= */
 
-/* Warm-tinted shadows (No cold, harsh pure black shadows) */
+/* Royal blue & icy-tinted ambient shadows */
 .shadow-neo-sm {
-  box-shadow: 0 1px 3px rgba(43, 38, 35, 0.04);
+  box-shadow: 0 1px 3px rgba(26, 79, 180, 0.05);
 }
 .shadow-neo-md {
-  box-shadow: 0 2px 8px rgba(43, 38, 35, 0.06);
+  box-shadow: 0 4px 12px rgba(26, 79, 180, 0.08);
 }
 .shadow-neo-lg {
-  box-shadow: 0 4px 16px rgba(43, 38, 35, 0.08);
+  box-shadow: 0 8px 24px rgba(26, 79, 180, 0.12);
 }
 
-/* Optional Paper / Linen Grain Texture Overlay */
+/* Paper / Linen Texture Overlay */
 .neo-paper-texture {
   position: relative;
 }
@@ -105,7 +105,7 @@
   position: absolute;
   inset: 0;
   opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Crect width='1' height='1' x='0' y='1' fill='%23786F66' opacity='0.4'/%3E%3Crect width='1' height='1' x='3' y='4' fill='%23786F66' opacity='0.3'/%3E%3Crect width='1' height='1' x='6' y='0' fill='%23786F66' opacity='0.35'/%3E%3Crect width='1' height='1' x='1' y='6' fill='%23786F66' opacity='0.25'/%3E%3Crect width='1' height='1' x='5' y='7' fill='%23786F66' opacity='0.3'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Crect width='1' height='1' x='0' y='1' fill='%23656D78' opacity='0.4'/%3E%3Crect width='1' height='1' x='3' y='4' fill='%23656D78' opacity='0.3'/%3E%3Crect width='1' height='1' x='6' y='0' fill='%23656D78' opacity='0.35'/%3E%3Crect width='1' height='1' x='1' y='6' fill='%23656D78' opacity='0.25'/%3E%3Crect width='1' height='1' x='5' y='7' fill='%23656D78' opacity='0.3'/%3E%3C/svg%3E");
   background-size: 8px 8px;
   pointer-events: none;
   border-radius: inherit;
