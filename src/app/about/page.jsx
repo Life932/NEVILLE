@@ -1,6 +1,6 @@
 import TeamSection from "../ui/about/TeamSection";
 import { AboutTeamSection } from "@/components/about/AboutTeamSection";
-import { AboutHero } from "@/components/about/about-hero";
+import { AboutHero } from "@/components/about/AboutHero";
 
 /* ============================================================================
    DEV NOTE: SEO & SOCIAL SHARING (METADATA)

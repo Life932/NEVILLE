@@ -29,6 +29,7 @@ export interface StrokeTextProps {
   reverse?: boolean;
   className?: string;
   style?: CSSProperties;
+  onComplete?: () => void;
 }
 
 interface StrokeTextBox {
@@ -44,25 +45,27 @@ export default function StrokeText({
   text = DEFAULT_TEXT,
   strokeColor = "#1A4FB4",
   fillColor = "#FFFFFF",
-  strokeWidth = 1.6,
-  drawDuration = 0.8,
-  fillDelay = 0.2,
-  stagger = 0.04,
-  ease = "power2.out",
+  strokeWidth = 1.8,
+  drawDuration = 0.65,
+  fillDelay = 0.1,
+  stagger = 0.025,
+  ease = "power3.out",
   trigger = "mount",
   fillMode = "wipe",
-  fontSize = 110,
+  fontSize = 136,
   fontWeight = 700,
   letterSpacing = 2,
   reverse = false,
   className = "",
   style = {},
+  onComplete,
 }: StrokeTextProps) {
   const rootRef = useRef<HTMLSpanElement | null>(null);
   const strokeTextRef = useRef<SVGTextElement | null>(null);
   const wipeRectRef = useRef<SVGRectElement | null>(null);
 
   const [box, setBox] = useState<StrokeTextBox | null>(null);
+  const [isReady, setIsReady] = useState(false);
 
   const rawId = useId();
   const wipeId = `stroke-text-wipe-${rawId.replace(/[^a-zA-Z0-9_-]/g, "")}`;
@@ -80,6 +83,7 @@ export default function StrokeText({
     [fontSize, fontWeight, letterSpacing]
   );
 
+  // Measure bounding box safely to prevent teleport layout shift
   useLayoutEffect(() => {
     const node = strokeTextRef.current;
     if (!node) return undefined;
@@ -104,14 +108,8 @@ export default function StrokeText({
         height: bbox.height + pad * 2,
       };
 
-      setBox((prev) =>
-        prev &&
-        Math.abs(prev.x - next.x) < 0.5 &&
-        Math.abs(prev.width - next.width) < 0.5 &&
-        Math.abs(prev.y - next.y) < 0.5
-          ? prev
-          : next
-      );
+      setBox(next);
+      setIsReady(true);
     };
 
     measure();
@@ -124,9 +122,10 @@ export default function StrokeText({
     };
   }, [characters, fontSize, fontWeight, letterSpacing, strokeWidth]);
 
+  // GSAP animation sequence
   useEffect(() => {
     const root = rootRef.current;
-    if (typeof window === "undefined" || !root || !box) return undefined;
+    if (typeof window === "undefined" || !root || !box || !isReady) return undefined;
 
     const strokes = gsap.utils.toArray(root.querySelectorAll("[data-stroke-char]"));
     const fills = gsap.utils.toArray(root.querySelectorAll("[data-fill-char]"));
@@ -135,7 +134,7 @@ export default function StrokeText({
 
     const fillEnabled = fillMode !== "none";
     const useWipe = fillEnabled && fillMode === "wipe";
-    const fillDuration = Math.max(0.4, drawDuration * 0.5);
+    const fillDuration = Math.max(0.35, drawDuration * 0.5);
     const staggerConfig: number | gsap.StaggerVars = reverse ? { each: stagger, from: "end" as const } : stagger;
     const targets = [...strokes, ...fills, wipe].filter(Boolean);
 
@@ -156,6 +155,7 @@ export default function StrokeText({
     const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) {
       setEnd();
+      onComplete?.();
       return () => gsap.killTweensOf(targets);
     }
 
@@ -166,6 +166,7 @@ export default function StrokeText({
         repeat: trigger === "loop" ? -1 : 0,
         repeatDelay: trigger === "loop" ? 0.9 : 0,
         defaults: { overwrite: "auto" },
+        onComplete: () => onComplete?.(),
       });
 
       tl.to(strokes, { strokeDashoffset: 0, duration: drawDuration, ease, stagger: staggerConfig }, 0);
@@ -187,53 +188,29 @@ export default function StrokeText({
       return tl;
     };
 
-    let timeline: gsap.core.Timeline | null = null;
-    let scrollTrigger: ReturnType<typeof ScrollTrigger.create> | null = null;
-    let removeHover: (() => void) | null = null;
-
-    if (trigger === "hover") {
-      setEnd();
-      const play = () => {
-        timeline?.kill();
-        timeline = build();
-        timeline.play(0);
-      };
-      root.addEventListener("pointerenter", play);
-      removeHover = () => root.removeEventListener("pointerenter", play);
-    } else {
-      timeline = build();
-      if (trigger === "scroll") {
-        scrollTrigger = ScrollTrigger.create({
-          trigger: root,
-          start: "top 82%",
-          once: true,
-          onEnter: () => timeline?.play(0),
-        });
-      } else {
-        timeline.play(0);
-      }
-    }
+    let timeline: gsap.core.Timeline | null = build();
+    timeline.play(0);
 
     return () => {
-      removeHover?.();
-      scrollTrigger?.kill();
       timeline?.kill();
       gsap.killTweensOf(targets);
     };
-  }, [box, dash, drawDuration, fillDelay, stagger, ease, trigger, fillMode, reverse]);
+  }, [box, isReady, dash, drawDuration, fillDelay, stagger, ease, trigger, fillMode, reverse, onComplete]);
 
-  const viewBox = box ? `${box.x} ${box.y} ${box.width} ${box.height}` : `0 ${-fontSize} 600 ${fontSize * 1.3}`;
+  const viewBox = box
+    ? `${box.x} ${box.y} ${box.width} ${box.height}`
+    : `0 ${-fontSize * 0.8} ${fontSize * 5} ${fontSize * 1.4}`;
 
   return (
     <span
       ref={rootRef}
-      className={`block w-full leading-[0] ${trigger === "hover" ? "cursor-pointer" : ""} ${className}`.trim()}
+      className={`block w-full leading-none transition-opacity duration-200 ${isReady ? "opacity-100" : "opacity-0"} ${className}`.trim()}
       style={style}
       role="img"
       aria-label={String(text ?? "")}
     >
       <svg
-        className="block w-full h-auto overflow-visible"
+        className="block w-full h-auto overflow-visible mx-auto"
         style={{ maxHeight: `${Math.round(fontSize * 1.3)}px` }}
         viewBox={viewBox}
         preserveAspectRatio="xMidYMid meet"

@@ -3,7 +3,7 @@ const nextConfig = {
   /* config options here */
   reactCompiler: true,
   images: {
-    qualities: [75, 90],
+    qualities: [75, 80, 90],
     dangerouslyAllowSVG: true,
     remotePatterns: [
       {
