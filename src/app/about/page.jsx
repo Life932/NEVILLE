@@ -3,6 +3,7 @@ import { AboutTeamSection } from "@/components/about/AboutTeamSection";
 import { AboutHero } from "@/components/about/AboutHero";
 import { AboutBriefSection } from "@/components/about/about-brief";
 import { AboutHistorySection } from "@/components/about/about-history";
+import { WhoParticipatesSection } from "@/components/about/who-participates";
 
 /* ============================================================================
    DEV NOTE: SEO & SOCIAL SHARING (METADATA)
@@ -59,6 +60,9 @@ export default function AboutPage() {
 
       {/* 3. History & Institutional Framework */}
       <AboutHistorySection />
+
+      {/* 4. Ecosystem Grid: Who Participates */}
+      <WhoParticipatesSection />
 
       {/* 
         =======================================================================
