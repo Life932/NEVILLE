@@ -20,7 +20,7 @@ export function AboutHero({
         initial={{ scale: 1.1 }}
         animate={{ scale: 1.0 }}
         transition={{
-          delay: 1.1,
+          delay: 0,
           duration: 30.0,
           ease: [0.25, 1, 0.5, 1], // Smooth cinematic easing
         }}
