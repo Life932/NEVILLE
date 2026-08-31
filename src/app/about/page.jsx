@@ -2,6 +2,7 @@ import TeamSection from "../ui/about/TeamSection";
 import { AboutTeamSection } from "@/components/about/AboutTeamSection";
 import { AboutHero } from "@/components/about/AboutHero";
 import { AboutBriefSection } from "@/components/about/about-brief";
+import { AboutHistorySection } from "@/components/about/about-history";
 
 /* ============================================================================
    DEV NOTE: SEO & SOCIAL SHARING (METADATA)
@@ -55,6 +56,9 @@ export default function AboutPage() {
 
       {/* 2. Core Mission & Brief Purpose */}
       <AboutBriefSection />
+
+      {/* 3. History & Institutional Framework */}
+      <AboutHistorySection />
 
       {/* 
         =======================================================================

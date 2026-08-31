@@ -30,7 +30,7 @@ export function AboutBriefSection() {
               - Mobile: Full-bleed edge-to-edge (-mx-4 w-[calc(100%+2rem)]), rounded bottom edge
               - Desktop: Strict tall container (h-[580px] xl:h-[620px]) taller than the text card
           */}
-          <div className="-mx-4 sm:mx-0 w-[calc(100%+2rem)] sm:w-full lg:w-[54%] shrink-0 relative h-[380px] sm:h-[460px] lg:h-[580px] rounded-none rounded-bl-none sm:rounded-3xl lg:rounded-[2.5rem] rounded-b-[2.5rem] sm:rounded-b-3xl lg:rounded-b-[2.5rem] overflow-hidden border-0 sm:border border-border/60 bg-muted shadow-neo-md group">
+          <div className="-mx-4 sm:mx-0 w-[calc(100%+2rem)] sm:w-full lg:w-[54%] shrink-0 relative h-[380px] sm:h-[460px] lg:h-[580px] rounded-none sm:rounded-3xl lg:rounded-[2.5rem] rounded-b-[2.5rem] sm:rounded-b-3xl lg:rounded-b-[2.5rem] overflow-hidden border-0 sm:border border-border/60 bg-muted shadow-neo-md group">
             {/* Background Photography */}
             <Image
               src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1400&auto=format&fit=crop"
