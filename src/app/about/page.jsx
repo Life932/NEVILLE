@@ -1,6 +1,5 @@
-import TeamSection from "../ui/about/TeamSection";
-import { AboutTeamSection } from "@/components/about/AboutTeamSection";
 import { AboutHero } from "@/components/about/AboutHero";
+import { AboutTeamShowcase } from "@/components/about/AboutTeamShowcase";
 import { AboutBriefSection } from "@/components/about/about-brief";
 import { AboutHistorySection } from "@/components/about/about-history";
 import { WhoParticipatesSection } from "@/components/about/who-participates";
@@ -65,28 +64,23 @@ export default function AboutPage() {
       {/* 3. History & Institutional Framework */}
       <AboutHistorySection />
 
-      {/* 4. Ecosystem Grid: Who Participates */}
+      {/* 4. Leadership: Interactive Team Showcase ("Leading the Change") */}
+      <AboutTeamShowcase />
+
+      {/* 5. Ecosystem Grid: Who Participates */}
       <WhoParticipatesSection />
 
-      {/* 5. Strategic Pillars: Why is NEVILLE Important? */}
+      {/* 6. Strategic Pillars: Why is NEVILLE Important? */}
       <WhyNevilleImportant />
 
-      {/* 6. Operational Blueprint: How Does NEVILLE Work? */}
+      {/* 7. Operational Blueprint: How Does NEVILLE Work? */}
       <HowNevilleWorks />
 
-      {/* 7. Strategic Framework & Impact Matrix */}
+      {/* 8. Strategic Framework & Impact Matrix */}
       <AboutStrategicFramework />
 
-      {/* 8. North-Star Mandate: Common Goal Manifesto */}
+      {/* 9. North-Star Mandate: Common Goal Manifesto */}
       <CommonGoalBanner />
-
-      {/* 
-        =======================================================================
-        CURRENT ACTIVE COMPONENTS
-        =======================================================================
-      */}
-      <TeamSection />
-      <AboutTeamSection />
     </main>
   );
 }
