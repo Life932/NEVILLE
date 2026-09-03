@@ -6,6 +6,8 @@ import { AboutHistorySection } from "@/components/about/about-history";
 import { WhoParticipatesSection } from "@/components/about/who-participates";
 import { WhyNevilleImportant } from "@/components/about/WhyNevilleImportant";
 import { HowNevilleWorks } from "@/components/about/HowNevilleWorks";
+import { AboutStrategicFramework } from "@/components/about/AboutStrategicFramework";
+import { CommonGoalBanner } from "@/components/about/CommonGoalBanner";
 
 /* ============================================================================
    DEV NOTE: SEO & SOCIAL SHARING (METADATA)
@@ -71,6 +73,12 @@ export default function AboutPage() {
 
       {/* 6. Operational Blueprint: How Does NEVILLE Work? */}
       <HowNevilleWorks />
+
+      {/* 7. Strategic Framework & Impact Matrix */}
+      <AboutStrategicFramework />
+
+      {/* 8. North-Star Mandate: Common Goal Manifesto */}
+      <CommonGoalBanner />
 
       {/* 
         =======================================================================
