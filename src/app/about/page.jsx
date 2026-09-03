@@ -4,6 +4,7 @@ import { AboutHero } from "@/components/about/AboutHero";
 import { AboutBriefSection } from "@/components/about/about-brief";
 import { AboutHistorySection } from "@/components/about/about-history";
 import { WhoParticipatesSection } from "@/components/about/who-participates";
+import { WhyNevilleImportant } from "@/components/about/WhyNevilleImportant";
 
 /* ============================================================================
    DEV NOTE: SEO & SOCIAL SHARING (METADATA)
@@ -63,6 +64,9 @@ export default function AboutPage() {
 
       {/* 4. Ecosystem Grid: Who Participates */}
       <WhoParticipatesSection />
+
+      {/* 5. Strategic Pillars: Why is NEVILLE Important? */}
+      <WhyNevilleImportant />
 
       {/* 
         =======================================================================
