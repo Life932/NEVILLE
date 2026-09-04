@@ -1,10 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Linkedin, Mail, Facebook, Instagram, Twitter, Github } from "lucide-react";
+import {
+  Linkedin,
+  Mail,
+  Facebook,
+  Instagram,
+  Twitter,
+  Github,
+  Loader2,
+  Sparkles,
+} from "lucide-react";
 import { TEAM_MEMBERS as defaultMembers } from "@/data/about-team-showcase-data";
 
 /* ============================================================================
@@ -14,16 +23,22 @@ import { TEAM_MEMBERS as defaultMembers } from "@/data/about-team-showcase-data"
    - Deep dark evergreen canvas with soft watermark leader silhouette.
    - Centered "LEADING THE CHANGE" overline with emerald divider line.
    - Left Column: Active leader portrait card with dashed contour, gradient
-     vignette, authoritative typography, and social links.
+     vignette, authoritative typography, HD resolution, and loading spinner.
    - Right Column: Dynamic quote block with ghost quote glyph + multi-avatar
      interactive switcher ring matrix with grayscale/active glow states.
 ============================================================================ */
 
 export function AboutTeamShowcase({ members = defaultMembers }) {
   const [activeId, setActiveId] = useState(members[0]?.id || "mehedi");
+  const [isImageLoading, setIsImageLoading] = useState(true);
 
   const activeMember =
     members.find((member) => member.id === activeId) || members[0];
+
+  // Reset loading state whenever a new member is selected
+  useEffect(() => {
+    setIsImageLoading(true);
+  }, [activeId]);
 
   return (
     <section
@@ -39,7 +54,7 @@ export function AboutTeamShowcase({ members = defaultMembers }) {
           <motion.div
             key={activeMember.id}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.07 }}
+            animate={{ opacity: 0.08 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.7 }}
             className="relative w-full h-full"
@@ -81,6 +96,28 @@ export function AboutTeamShowcase({ members = defaultMembers }) {
 
               {/* Main Squircle Portrait Card */}
               <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl border border-emerald-500/30 bg-[#06241a]">
+                {/* HD Image Loading Spinner Overlay */}
+                <AnimatePresence>
+                  {isImageLoading && (
+                    <motion.div
+                      initial={{ opacity: 1 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 flex flex-col items-center justify-center bg-[#06241a] z-20 pointer-events-none"
+                    >
+                      <div className="relative flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full border-2 border-emerald-500/20 border-t-emerald-400 animate-spin" />
+                        <Sparkles className="w-5 h-5 text-emerald-400 absolute animate-pulse" />
+                      </div>
+                      <span className="text-[11px] font-mono tracking-widest text-emerald-400/80 uppercase mt-3">
+                        Loading...
+                      </span>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                {/* HD Portrait Image */}
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeMember.id}
@@ -94,16 +131,21 @@ export function AboutTeamShowcase({ members = defaultMembers }) {
                       src={activeMember.image}
                       alt={activeMember.name}
                       fill
-                      sizes="(max-width: 768px) 340px, 380px"
-                      className="object-cover object-top"
+                      /* HD Optimization: Requesting 800px ensures crisp rendering on 2x/3x Retina screens */
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 768px, 800px"
+                      className={`object-cover object-top transition-opacity duration-300 ${
+                        isImageLoading ? "opacity-0" : "opacity-100"
+                      }`}
                       priority
+                      quality={95}
+                      onLoad={() => setIsImageLoading(false)}
                     />
                   </motion.div>
                 </AnimatePresence>
 
                 {/* Bottom Vignette & Metadata */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10 pointer-events-none">
-                  <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10 pointer-events-none">
+                  <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight drop-shadow-md">
                     {activeMember.name}
                   </h3>
                   <p className="text-xs sm:text-sm font-semibold text-emerald-400 mt-1 uppercase tracking-wider">
