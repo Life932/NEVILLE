@@ -17,7 +17,6 @@ export const TEAM_MEMBERS = [
       linkedin: "https://linkedin.com",
       facebook: "https://facebook.com",
       instagram: "https://instagram.com",
-      email: "mailto:director@neville.org.bd",
     },
   },
   {
@@ -26,7 +25,7 @@ export const TEAM_MEMBERS = [
     role: "Co-Founder & Head of Logistics",
     quote:
       "Obsessed with Dhaka's potential and seeing our peers rise to the challenge of serving our neighborhoods.",
-    image: "https://placehold.co/400x400/e2e8f0/64748b?text=AA",
+    image: "/Adipto.jpeg",
     socials: {
       linkedin: "https://linkedin.com",
       facebook: "https://facebook.com",
@@ -39,7 +38,7 @@ export const TEAM_MEMBERS = [
     role: "Co-Founder & Head of Finance",
     quote:
       "Believing that strong local action in our neighborhoods leads to global ripples of meaningful change.",
-    image: "/Joy.jpg",
+    image: "/Joy.jpeg",
     socials: {
       linkedin: "https://linkedin.com",
       facebook: "https://facebook.com",
@@ -53,7 +52,7 @@ export const TEAM_MEMBERS = [
     role: "Co-Founder & Senior Officer, M&O",
     quote:
       "I entertain fellows in serious moments. Dreaming of a new generation.",
-    image: "https://placehold.co/400x400/e2e8f0/64748b?text=RR",
+    image: "/Rehan.jpg",
     socials: {
       facebook: "https://facebook.com",
       instagram: "https://instagram.com",
@@ -61,17 +60,45 @@ export const TEAM_MEMBERS = [
     },
   },
   {
-    id: "monon",
-    name: "M.A. Chowdhury Monon",
-    role: "Head of Human Resource",
+    id: "srabon",
+    name: "Zaman Srabon",
+    role: "Head of Overseas Affairs",
     quote:
-      "Cultivating talent and fostering leadership within our passionate volunteer community.",
-    image: "/Monon.png",
+      "The world is vast, and so is our potential. I'm here to ensure NEVILLE reaches every corner of the globe.",
+    image: "/Srabon.jpeg",
     socials: {
       linkedin: "https://linkedin.com",
       facebook: "https://facebook.com",
       instagram: "https://instagram.com",
-      email: "mailto:hr@neville.org.bd",
+      email: "mailto:accounts@neville.org.bd",
+    },
+  },
+  {
+    id: "sadik",
+    name: "Abdullah Ahmad Sadik",
+    role: "Head of IT",
+    quote:
+      "Building robust digital platforms to democratize academic tools and open archives.",
+    image: "/Abdullah.jpg",
+    socials: {
+      linkedin: "https://linkedin.com",
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      email: "mailto:tech@neville.org.bd",
+    },
+  },
+  {
+    id: "farhan-hossain",
+    name: "Muhammad Farhan Hossain",
+    role: "Head of Marketing & Outreach",
+    quote:
+      "Amplifying our youth voices and connecting regional talent across Bangladesh.",
+    image: "/Farhan.jpeg",
+    socials: {
+      linkedin: "https://linkedin.com",
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      email: "mailto:communications@neville.org.bd",
     },
   },
   {
@@ -101,6 +128,76 @@ export const TEAM_MEMBERS = [
       instagram: "https://instagram.com",
       email: "mailto:ops@neville.org.bd",
     },
+  },  
+  {
+    id: "ahnaf",
+    name: "Ahnaf Ibtisham",
+    role: "Senior Officer, Marketing & Outreach",
+    quote:
+      "Connecting bright minds across the nation with innovation and opportunity.",
+    image: "/Ahnaf.jpg",
+    socials: {
+      linkedin: "https://linkedin.com",
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      email: "mailto:accounts@neville.org.bd",
+    },
+  },
+   {
+    id: "tawsif",
+    name: "Tawsif Muttakyy",
+    role: "Member, Academic Affairs",
+    quote:
+      "Committed to academic excellence and empowering students with knowledge and skills.",
+    image: "/Tawsif.jpg",
+    socials: {
+      linkedin: "https://linkedin.com",
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      email: "mailto:accounts@neville.org.bd",
+    },
+  },
+   {
+    id: "Adib",
+    name: "Adib Hossain",
+    role: "Member, Academic Affairs",
+    quote:
+      "Committed to academic excellence and empowering students with knowledge and skills.",
+    image: "/Adib.png",
+    socials: {
+      linkedin: "https://linkedin.com",
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      email: "mailto:accounts@neville.org.bd",
+    },
+  },
+   {
+    id: "eshan",
+    name: "Abrar Eshan Chowdhury",
+    role: "Member, Academic Affairs",
+    quote:
+      "Committed to academic excellence and empowering students with knowledge and skills.",
+    image: "/Eshan.jpg",
+    socials: {
+      linkedin: "https://linkedin.com",
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      email: "mailto:accounts@neville.org.bd",
+    },
+  },
+  {
+    id: "rafid",
+    name: "Rafid Muhtasim Nihal",
+    role: "Member, Academic Affairs",
+    quote:
+      "Committed to academic excellence and empowering students with knowledge and skills.",
+    image: "/Rafid.jpg",
+    socials: {
+      linkedin: "https://linkedin.com",
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      email: "mailto:accounts@neville.org.bd",
+    },
   },
   {
     id: "adil",
@@ -114,62 +211,6 @@ export const TEAM_MEMBERS = [
       facebook: "https://facebook.com",
       instagram: "https://instagram.com",
       email: "mailto:accounts@neville.org.bd",
-    },
-  },
-  {
-    id: "hasib",
-    name: "Hasib Bin Haroon",
-    role: "Officer, Finance",
-    quote:
-      "Accountability and integrity are the twin engines of sustainable community impact.",
-    image: "/Hasib.jpg",
-    socials: {
-      linkedin: "https://linkedin.com",
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      email: "mailto:audit@neville.org.bd",
-    },
-  },
-  {
-    id: "sadik",
-    name: "Abdullah Ahmad Sadik",
-    role: "Head of IT",
-    quote:
-      "Building robust digital platforms to democratize academic tools and open archives.",
-    image: "/Abdullah.jpg",
-    socials: {
-      linkedin: "https://linkedin.com",
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      email: "mailto:tech@neville.org.bd",
-    },
-  },
-  {
-    id: "farhan-hossain",
-    name: "Muhammad Farhan Hossain",
-    role: "Head of Marketing & Outreach",
-    quote:
-      "Amplifying our youth voices and connecting regional talent across Bangladesh.",
-    image: "https://placehold.co/400x400/cccccc/666666?text=MH",
-    socials: {
-      linkedin: "https://linkedin.com",
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      email: "mailto:communications@neville.org.bd",
-    },
-  },
-  {
-    id: "nubaid",
-    name: "Nubaid Khan",
-    role: "Senior Officer, Marketing & Outreach",
-    quote:
-      "Driving community outreach and grassroots engagement across schools and colleges.",
-    image: "/Nubaid.jpg",
-    socials: {
-      linkedin: "https://linkedin.com",
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      email: "mailto:outreach.officer@neville.org.bd",
     },
   },
 ];
