@@ -163,7 +163,7 @@ export const TEAM_MEMBERS = [
     role: "Member, Academic Affairs",
     quote:
       "Committed to academic excellence and empowering students with knowledge and skills.",
-    image: "/Adib.jpg",
+    image: "/Adib.png",
     socials: {
       linkedin: "https://linkedin.com",
       facebook: "https://facebook.com",
