@@ -1,4 +1,12 @@
-import TeamSection from "../ui/about/TeamSection";
+import { AboutHero } from "@/components/about/AboutHero";
+import { AboutTeamShowcase } from "@/components/about/AboutTeamShowcase";
+import { AboutBriefSection } from "@/components/about/about-brief";
+import { AboutHistorySection } from "@/components/about/about-history";
+import { WhoParticipatesSection } from "@/components/about/who-participates";
+import { WhyNevilleImportant } from "@/components/about/WhyNevilleImportant";
+import { HowNevilleWorks } from "@/components/about/HowNevilleWorks";
+import { AboutStrategicFramework } from "@/components/about/AboutStrategicFramework";
+import { CommonGoalBanner } from "@/components/about/CommonGoalBanner";
 
 /* ============================================================================
    DEV NOTE: SEO & SOCIAL SHARING (METADATA)
@@ -15,7 +23,7 @@ import TeamSection from "../ui/about/TeamSection";
        title: "About NEVILLE",
        description: "Meet the minds behind Dhaka's premier youth initiative.",
        url: "https://neville.org.bd/about",
-       images:[{ url: "/og-team-image.jpg", width: 1200, height: 630 }],
+       images: [{ url: "/og-team-image.jpg", width: 1200, height: 630 }],
      }
 ============================================================================ */
 export const metadata = {
@@ -47,32 +55,32 @@ export default function AboutPage() {
       - `bg-background`: Inherits the primary background from the global theme.
     */
     <main className="min-h-screen bg-background text-foreground flex flex-col w-full overflow-hidden">
-      {/* 
-        =======================================================================
-        FUTURE COMPONENT ROADMAP (PHASE 2)
-        =======================================================================
-        To establish authority as a modern "Youth Organization" rather than a 
-        standard charity, the page hierarchy requires mission context prior 
-        to the organizational chart.
-        
-        Planned structural injections:
-        
-        {/* 1. The Executive Summary / Manifesto */}
-      {/* <AboutHero /> */}
+      {/* 1. The Executive Summary / Manifesto */}
+      <AboutHero />
 
-      {/* 2. The Core Methodology (Mentorship, Research, Action) */}
-      {/* <MissionVisionGrid /> */}
+      {/* 2. Core Mission & Brief Purpose */}
+      <AboutBriefSection />
 
-      {/* 3. The "Radical Transparency" Module */}
-      {/* <OpenLedgerDashboard /> */}
-      {/* ======================================================================= */}
+      {/* 3. History & Institutional Framework */}
+      <AboutHistorySection />
 
-      {/* 
-        =======================================================================
-        CURRENT ACTIVE COMPONENTS
-        =======================================================================
-      */}
-      <TeamSection />
+      {/* 4. Leadership: Interactive Team Showcase ("Leading the Change") */}
+      <AboutTeamShowcase />
+
+      {/* 5. Ecosystem Grid: Who Participates */}
+      <WhoParticipatesSection />
+
+      {/* 6. Strategic Pillars: Why is NEVILLE Important? */}
+      <WhyNevilleImportant />
+
+      {/* 7. Operational Blueprint: How Does NEVILLE Work? */}
+      <HowNevilleWorks />
+
+      {/* 8. Strategic Framework & Impact Matrix */}
+      <AboutStrategicFramework />
+
+      {/* 9. North-Star Mandate: Common Goal Manifesto */}
+      <CommonGoalBanner />
     </main>
   );
 }

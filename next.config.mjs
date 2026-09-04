@@ -3,12 +3,16 @@ const nextConfig = {
   /* config options here */
   reactCompiler: true,
   images: {
-    qualities: [75, 90],
+    qualities: [75, 80, 90],
     dangerouslyAllowSVG: true,
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "placehold.co",
+        hostname: "placehold.co"
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com"
       },
       // DEV NOTE: When you eventually use Sanity CMS or AWS for real images,
       // you will just add another object here like:
